@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/oksana-samokhvalova-project-five/static/css/main.e14929af.chunk.css",
+    "main.js": "/oksana-samokhvalova-project-five/static/js/main.a5436166.chunk.js",
+    "main.js.map": "/oksana-samokhvalova-project-five/static/js/main.a5436166.chunk.js.map",
+    "runtime-main.js": "/oksana-samokhvalova-project-five/static/js/runtime-main.707f4e67.js",
+    "runtime-main.js.map": "/oksana-samokhvalova-project-five/static/js/runtime-main.707f4e67.js.map",
+    "static/js/2.878a1045.chunk.js": "/oksana-samokhvalova-project-five/static/js/2.878a1045.chunk.js",
+    "static/js/2.878a1045.chunk.js.map": "/oksana-samokhvalova-project-five/static/js/2.878a1045.chunk.js.map",
+    "index.html": "/oksana-samokhvalova-project-five/index.html",
+    "precache-manifest.a0f2ad4b7d98c084af7d868728da68c6.js": "/oksana-samokhvalova-project-five/precache-manifest.a0f2ad4b7d98c084af7d868728da68c6.js",
+    "service-worker.js": "/oksana-samokhvalova-project-five/service-worker.js",
+    "static/css/main.e14929af.chunk.css.map": "/oksana-samokhvalova-project-five/static/css/main.e14929af.chunk.css.map",
+    "static/js/2.878a1045.chunk.js.LICENSE.txt": "/oksana-samokhvalova-project-five/static/js/2.878a1045.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/oksana-samokhvalova-project-five/static/media/logo.12a0f127.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.707f4e67.js",
+    "static/js/2.878a1045.chunk.js",
+    "static/css/main.e14929af.chunk.css",
+    "static/js/main.a5436166.chunk.js"
+  ]
+}
