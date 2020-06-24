@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a4471a365749879290bd89ab8ef07f33",
+    "revision": "ae96258c28a2e433b873ebfa7b2532f3",
     "url": "/oksana-samokhvalova-project-five/index.html"
   },
   {
-    "revision": "75cf22dd9dc6f097ab00",
-    "url": "/oksana-samokhvalova-project-five/static/css/main.06381f05.chunk.css"
+    "revision": "a036b932afb90b03ddf6",
+    "url": "/oksana-samokhvalova-project-five/static/css/main.cdf7911d.chunk.css"
   },
   {
-    "revision": "e0dd0a2b5499fc186952",
-    "url": "/oksana-samokhvalova-project-five/static/js/2.778be703.chunk.js"
+    "revision": "66edd4226a1da7e41aaf",
+    "url": "/oksana-samokhvalova-project-five/static/js/2.68ce72d2.chunk.js"
   },
   {
-    "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/oksana-samokhvalova-project-five/static/js/2.778be703.chunk.js.LICENSE.txt"
+    "revision": "fa2340a152e34a101d267a5145e83df1",
+    "url": "/oksana-samokhvalova-project-five/static/js/2.68ce72d2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "75cf22dd9dc6f097ab00",
-    "url": "/oksana-samokhvalova-project-five/static/js/main.70ee6e34.chunk.js"
+    "revision": "a036b932afb90b03ddf6",
+    "url": "/oksana-samokhvalova-project-five/static/js/main.410fcf0f.chunk.js"
   },
   {
     "revision": "af45eea21503439c8ce7",
