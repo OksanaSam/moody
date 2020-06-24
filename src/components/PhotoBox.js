@@ -14,10 +14,12 @@ class PhotoBox extends Component {
                                 altTag={this.props.altTag}
                                 numBox={this.props.numBox}
                                 removeImages={this.props.removeImages}
+                                newColor={this.props.newColor}
                             />
                         ) : <IncompleteImage
                                 getImages={this.props.getImages}
                                 numBox={this.props.numBox}
+                                newColor={this.props.newColor}
                             /> }
                     <div className="icons">
                         <div className="leftIcons">

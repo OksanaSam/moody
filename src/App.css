@@ -78,25 +78,22 @@
     font-weight: 500;
   }
   
-  .headerPink {
+  .header {
     height: 10vh;
     display: flex;
     /* flex-direction: column; */
     align-items: center;
-    background-color: #d0b8b3;
     /* justify-content: center; */
   }
-  
+
   /* Toggling Colors */
-  .headerBlue {
-    height: 10vh;
-    display: flex;
-    /* flex-direction: column; */
-    align-items: center;
-    background-color: #c6d3dc;
-    /* justify-content: center; */
+  .header.NotToggledClass {
+    background-color: #d0b8b3;
   }
   
+  .header.ToggledClass {
+    background-color: #c6d3dc;
+  }
   
   /* nav styles */
   .navBar {
@@ -145,43 +142,53 @@
   .mainGrid {
     width: 100%;
     height: 80vh;
-    background-color: #e4e5e7;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    /* display: flex; */
+    display: grid;
+    padding-top: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    justify-items: center;
+    /* grid-gap: 10%; */
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
   }
-  
-  
-  .mainGridBlue {
-    width: 100%;
-    height: 80vh;
+
+   /* Toggling Colors */
+  .mainContainer.NotToggledClass {
     background-color: #f0e7de;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
   }
-  
+
+  .mainContainer.ToggledClass {
+    background-color: #e4e5e7;
+  }
+
   /* Photo Box Styles */
   .frame {
     padding-top: 20px;
-    height: 300px;
+    display: flex;
+    height: 310px;
     min-height: fit-content;
-    width: 30%;
-    max-width: 500px;
+    width: 50%;
+    max-width: 300px;
     /* border: 2px solid black; */
     background-color: #ffffff;
-    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    /* -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
     -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-    /* transform: scale(0.8, 0.8) rotate(5deg); */
-    /* transition: all 0.35s; */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .3); */
+    /* transform: scale(0.8, 0.8) rotate(5deg);
+    transition: all 0.35s; */
     /* box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
       0 2px 2px rgba(0,0,0,0.12), 
       0 4px 4px rgba(0,0,0,0.12), 
       0 8px 8px rgba(0,0,0,0.12),
       0 16px 16px rgba(0,0,0,0.12); */
+      box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+      0 2px 2px rgba(0,0,0,0.11), 
+      0 4px 4px rgba(0,0,0,0.11), 
+      0 8px 8px rgba(0,0,0,0.11), 
+      0 16px 16px rgba(0,0,0,0.11), 
+      0 32px 32px rgba(0,0,0,0.11);
   }
   
   .innerFrame {
@@ -196,14 +203,22 @@
   .imagePlace {
     height: 80%;
     min-height: fit-content;
-    /* background-color: #e4b3af; */
-    background-color: #89a7bf;
+    background-color: #F7CACA;
     display: flex;
     flex-direction: column;
     align-self: stretch;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     position: relative;
+  }
+
+  /* Toggling Colors */
+  .imagePlace.NotToggledClass {
+    background-color: #F7CACA;
+  }
+
+  .imagePlace.ToggledClass {
+    background-color: #89a7bf;
   }
   
   .imagePlace img {
@@ -266,6 +281,7 @@
   
   .addButton {
     font-size: 5rem;
+    align-self: center;
   }
   
   .closeButton {
@@ -281,23 +297,20 @@
   }
   
   /* FOOTER STARTS */
-  .footerPink {
+  .footer {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 10vh;
-    background-color: #d0b8b3;
     text-align: center;
   }
+
+  .footer.NotToggledClass {
+    background-color: #d0b8b3;
+  }
   
-  
-  .footerBlue {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10vh;
+  .footer.ToggledClass {
     background-color: #c6d3dc;
-    text-align: center;
   }
   
   .footerFlex {

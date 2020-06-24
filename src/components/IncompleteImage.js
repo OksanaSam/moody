@@ -33,7 +33,7 @@ class IncompleteImage extends Component {
 
     render() {
         return (
-            <div className='imagePlace'>
+            <div className={`imagePlace ${this.props.newColor}`}>
                 {this.state.showInput && (
                     // <label for="moodInput" className="sr-only">Word describing your mood</label>
                     <input

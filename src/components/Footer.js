@@ -4,7 +4,7 @@ import logo from '../logo.png'; // with import
 class Footer extends Component {
     render() {
         return (
-            <div className="footer footerPink" id="footer">
+            <div className={`footer ${this.props.newColor}`} id="footer">
                 <div className="wrapper">
                     <div className="footerFlex">
                         <div>

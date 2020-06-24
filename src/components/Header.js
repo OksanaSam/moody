@@ -23,7 +23,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div className='header headerPink' id="header">
+            <div className={`header ${this.props.newColor}`}  id="header">
                 <div className="wrapper">
                     <nav className="navBar">
                         <div className="logo">

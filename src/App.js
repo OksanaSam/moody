@@ -5,7 +5,6 @@ import initialState from './initialState';
 import Header from './components/Header';
 import PhotoBox from './components/PhotoBox';
 import QuoteBox from './components/QuoteBox';
-import PhotoFrame from './components/PhotoFrame';
 import Footer from './components/Footer';
 // import './font-awesome.min.css';
 // import 'font-awesome/css/font-awesome.min.css';
@@ -38,7 +37,6 @@ class App extends Component {
     this.setState({
       isToggled: !this.state.isToggled,  
     })
-    console.log('toggled');
   };
 
 
@@ -67,6 +65,7 @@ class App extends Component {
         numBox={index}
         getImages={this.getImages}
         removeImages={this.removeImages}
+        newColor={this.newColor}
       />
     ));
     const quoteBox = (
@@ -75,6 +74,7 @@ class App extends Component {
         author={this.state.author}
         removeQuote={this.removeQuote}
         getQuote={this.getQuote}
+        newColor={this.newColor}
       />
     );
     return [
@@ -174,22 +174,27 @@ class App extends Component {
     }
     start();
     const boxes = this.getBoxes();
-    // const newColor = this.state.isToggled ? 'ToggledClass' : 'NotToggledClass';
+    const newColor = this.state.isToggled ? 'ToggledClass' : 'NotToggledClass';
 
     return (
       <div>
         {/* {this.state.isToggled ? 'ToggledClass' : 'NotToggledClass'} */}
         <Header
-        handleToggle={this.handleToggle}/>
-        <div className="mainGrid" id="mainGrid">
+          handleToggle={this.handleToggle}
+          newColor={newColor}
+          />
+        <div className={`mainContainer ${newColor}`} >
           <div className='wrapper'>
-          <PhotoFrame/>
+            <div className="mainGrid" id="mainGrid">
+              {boxes}
+            </div>
+            {/* <h1 className={newColor}>ToggledClass</h1> */}
+            {/* <button onClick={start}>Play</button> */}
           </div>
-          {boxes}
-          {/* <h1 className={newColor}>ToggledClass</h1> */}
-          {/* <button onClick={start}>Play</button> */}
         </div>
-        <Footer/>
+        <Footer
+          newColor={newColor}
+        />
       </div>
     )
   };
