@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 
-class CompleteImage  extends Component {
+class CompleteQuote extends Component {
     handleClick = () => {
-        this.props.removeImages(this.props.numBox);
+        this.props.removeQuote();
     };
-    
+
     render() {
-        console.log(this.props.mood);
         return (
             <div className='imagePlace'>
                 <button className="closeButton" onClick={this.handleClick}><i className="fas fa-times"></i></button>
-                {/* <p>{this.props.mood}</p> */}
-                <img src={this.props.url} alt={this.props.altTag}/>
+                <p className="randomQuote">{this.props.quote}</p>
+                <p className="quoteAuthor">{this.props.author}</p>
             </div>
-        );
+        )
     }
 };
 
-export default CompleteImage;
+export default CompleteQuote;

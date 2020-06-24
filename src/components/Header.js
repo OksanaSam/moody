@@ -7,20 +7,29 @@ class Header extends Component {
     }
 
     toggleClass = () => {
-        const oldStyle = document.getElementById('test').className;
-        const newClassName = oldStyle === 'mainGrid' ? 'newMainGrid' : 'mainGrid'
-        document.getElementById('test').className =  newClassName;
-      }
+        // const oldStyle = document.getElementById('mainGrid').className;
+        // const newClassName = oldStyle === 'mainGrid' ? 'mainGridBlue' : 'mainGrid'
+        // document.getElementById('mainGrid').className =  newClassName;
+
+        // const oldStyleHeader = document.getElementById('header').className;
+        // const newClassNameHeader = oldStyleHeader === 'headerPink' ? 'headerBlue' : 'headerPink'
+        // document.getElementById('header').className =  newClassNameHeader;
+
+        // const oldStyleFooter = document.getElementById('footer').className;
+        // const newClassNameFooter = oldStyleFooter === 'footerPink' ? 'footerBlue' : 'footerPink'
+        // document.getElementById('footer').className =  newClassNameFooter;
+
+    }
 
     render() {
         return (
-            <div className='header'>
+            <div className='header headerPink' id="header">
                 <div className="wrapper">
                     <nav className="navBar">
                         <div className="logo">
-                            <p>MOODY</p>
+                            <h1>MOODY</h1>
                         </div>
-                        <button onClick={this.toggleClass}>Toggle</button>
+                        <button className="toggleColor" onClick={this.props.handleToggle}>Toggle</button>
                         <ul className="hamburger">
                         {/* <input type="checkbox" id="toggle" name="toggle"/> */}
                             
@@ -30,7 +39,7 @@ class Header extends Component {
                 </div>
             </div>
         )
-    }
+    };
 };
 
 export default Header;

@@ -4,6 +4,7 @@ import axios from 'axios';
 import initialState from './initialState';
 import Header from './components/Header';
 import PhotoBox from './components/PhotoBox';
+import QuoteBox from './components/QuoteBox';
 import PhotoFrame from './components/PhotoFrame';
 import Footer from './components/Footer';
 // import './font-awesome.min.css';
@@ -12,6 +13,8 @@ import Footer from './components/Footer';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faTumblr, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import './App.css';
+import sound from './Selena - Bidi Bidi Bom Bom (Official Music Video).mp3';
+
 
 
 // import sweet alerts
@@ -26,52 +29,61 @@ class App extends Component {
       //set initial state for Api data
       boxArray: initialState,
       quote: '',
+      author: '',
+      isToggled: false,
     };
   }
 
-  // Getting a Random Quote from Api
-  componentDidMount() {
-    axios({
-      url: 'https://type.fit/api/quotes',
-      method: 'GET',
-      responseType: 'json',
-      params: {}
-    }).then(({ data }) => {
-      let quoteId = Math.floor(Math.random() * data.length);
-      let randomQuote = data[quoteId].text;
-      this.setState({
-        quote: randomQuote,
-      })
+  handleToggle = () => {
+    this.setState({
+      isToggled: !this.state.isToggled,  
     })
-  }
+    console.log('toggled');
+  };
+
 
   // getBoxes() {
-  //   const photoBoxes = this.state.boxArray.map(boxIndex => (
+  //   return this.state.boxArray.map((box, index) => (
   //     <PhotoBox
-  //         mood={this.state.boxArray[boxIndex]}
-  //         url={this.state.boxArray[boxIndex]}
+  //         key={index}
+  //         mood={box.mood}
+  //         url={box.url}
+  //         altTag={box.alt}
+  //         numBox={index}
+  //         getImages={this.getImages}
+  //         removeImages={this.removeImages}
   //     />
   //   ));
-  //   const quoteBox = (
-  //     <PhotoBox
-  //         mood=''
-  //         // url='something'
-  //     />
-  //   );
-  //   return [
-  //     photoBoxes[0],
-  //     quoteBox,
-  //     ...photoBoxes.slice(1),
-  //   ];
-  // }
+  // };
+  
 
-
-// Toggling Colors
-  toggleClass = () => {
-    const oldStyle = document.getElementById('test').className;
-    const newClassName = oldStyle === 'red' ? 'blue' : 'red'
-    document.getElementById('test').className =  newClassName
+  getBoxes() {
+    const photoBoxes = this.state.boxArray.map((box, index) => (
+      <PhotoBox
+        key={index}
+        mood={box.mood}
+        url={box.url}
+        altTag={box.alt}
+        numBox={index}
+        getImages={this.getImages}
+        removeImages={this.removeImages}
+      />
+    ));
+    const quoteBox = (
+      <QuoteBox 
+        quote={this.state.quote}
+        author={this.state.author}
+        removeQuote={this.removeQuote}
+        getQuote={this.getQuote}
+      />
+    );
+    return [
+      photoBoxes[0],
+      quoteBox,
+      ...photoBoxes.slice(1),
+    ];
   }
+
 
  // Getting Images from Unsplash 
   getImages = (photoMood, numBox) => {
@@ -113,37 +125,69 @@ class App extends Component {
     });
   };
 
-  getBoxes() {
-    return this.state.boxArray.map((box, index) => (
-      <PhotoBox
-          key={index}
-          mood={box.mood}
-          url={box.url}
-          altTag={box.alt}
-          numBox={index}
-          getImages={this.getImages}
-          removeImages={this.removeImages}
-      />
-    ));
-  };
 
-  toggleBox = () => {
-    this.setState({
-      isBoxVisible: true
+ // Getting a random quote from Api
+  getQuote = () => {
+    axios({
+        url: 'https://type.fit/api/quotes',
+        method: 'GET',
+        responseType: 'json',
+        params: {}
+    }).then(({ data }) => {
+        let quoteId = Math.floor(Math.random() * data.length);
+        let randomQuote = data[quoteId].text;
+        let author = data[quoteId].author;
+        this.setState({
+          quote: randomQuote,
+          author: author,
+        })
     })
   };
+
+
+  removeQuote = () => {
+    this.setState({
+      quote: '',
+      author: '',
+    });
+  };
+
+  // getBoxes() {
+  //   return this.state.boxArray.map((box, index) => (
+  //     <PhotoBox
+  //         key={index}
+  //         mood={box.mood}
+  //         url={box.url}
+  //         altTag={box.alt}
+  //         numBox={index}
+  //         getImages={this.getImages}
+  //         removeImages={this.removeImages}
+  //     />
+  //   ));
+  // };
   
 
   render() {
+    let audio = new Audio({sound})
+    const start = () => {
+      audio.play()
+    }
+    start();
     const boxes = this.getBoxes();
+    // const newColor = this.state.isToggled ? 'ToggledClass' : 'NotToggledClass';
+
     return (
       <div>
-        <Header/>
-        <div className="mainGrid" id="test">
+        {/* {this.state.isToggled ? 'ToggledClass' : 'NotToggledClass'} */}
+        <Header
+        handleToggle={this.handleToggle}/>
+        <div className="mainGrid" id="mainGrid">
           <div className='wrapper'>
           <PhotoFrame/>
           </div>
           {boxes}
+          {/* <h1 className={newColor}>ToggledClass</h1> */}
+          {/* <button onClick={start}>Play</button> */}
         </div>
         <Footer/>
       </div>

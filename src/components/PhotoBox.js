@@ -7,7 +7,6 @@ class PhotoBox extends Component {
         return (
             <div className='frame'>
                 <div className='innerFrame'>
-                    <div className='imagePlace'>
                         { this.props.mood || this.props.url ? (
                             <CompleteImage 
                                 mood={this.props.mood}
@@ -20,7 +19,6 @@ class PhotoBox extends Component {
                                 getImages={this.props.getImages}
                                 numBox={this.props.numBox}
                             /> }
-                    </div>
                     <div className="icons">
                         <div className="leftIcons">
                             <i className="far fa-heart"></i>

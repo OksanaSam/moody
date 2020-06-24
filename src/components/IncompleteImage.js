@@ -4,6 +4,12 @@ class IncompleteImage extends Component {
     constructor() {
         super();
         this.textInput = React.createRef();
+        this.state = {
+            showInput: false,
+            showAdd: true,
+        };
+
+        this.toggleClass= this.toggleClass.bind(this);
     }
 
     handleKeyPress = (e) => {
@@ -15,18 +21,34 @@ class IncompleteImage extends Component {
         }
     };
 
+    toggleClass = () => {
+        // const oldStyle = document.getElementById('moodInput').className;
+        // const newClassName = oldStyle === 'moodInput' ? 'moodInputNew' : 'moodInput'
+        // document.getElementById('moodInput').className =  newClassName;
+        this.setState({
+            showInput: !this.state.showInput,
+            showAdd: !this.state.showAdd,
+        });
+    };
+
     render() {
         return (
-            <div className='incompleteImage'>
-                <input
-                    type="text"
-                    className="moodInput"
-                    placeholder="Enter your mood"
-                    ref={this.textInput}
-                    onKeyPress={this.handleKeyPress}
-                />
-                <p>Incomplete Image</p>
-                <button className="addButton"><i className="fas fa-plus"></i></button>
+            <div className='imagePlace'>
+                {this.state.showInput && (
+                    // <label for="moodInput" className="sr-only">Word describing your mood</label>
+                    <input
+                        id="moodInput"
+                        className="moodInput"
+                        type="text"
+                        placeholder="Your mood in one word"
+                        ref={this.textInput}
+                        onKeyPress={this.handleKeyPress}
+                    />)}
+                {/* <p>Incomplete Image</p> */}
+                {this.state.showAdd && (
+                <button className="addButton" onClick={this.toggleClass}>
+                    <i className="fas fa-plus" />
+                </button>)}
             </div>
         )
     }
