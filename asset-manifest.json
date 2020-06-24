@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/oksana-samokhvalova-project-five/static/css/main.e14929af.chunk.css",
-    "main.js": "/oksana-samokhvalova-project-five/static/js/main.a5436166.chunk.js",
-    "main.js.map": "/oksana-samokhvalova-project-five/static/js/main.a5436166.chunk.js.map",
+    "main.css": "/oksana-samokhvalova-project-five/static/css/main.06381f05.chunk.css",
+    "main.js": "/oksana-samokhvalova-project-five/static/js/main.70ee6e34.chunk.js",
+    "main.js.map": "/oksana-samokhvalova-project-five/static/js/main.70ee6e34.chunk.js.map",
     "runtime-main.js": "/oksana-samokhvalova-project-five/static/js/runtime-main.707f4e67.js",
     "runtime-main.js.map": "/oksana-samokhvalova-project-five/static/js/runtime-main.707f4e67.js.map",
-    "static/js/2.878a1045.chunk.js": "/oksana-samokhvalova-project-five/static/js/2.878a1045.chunk.js",
-    "static/js/2.878a1045.chunk.js.map": "/oksana-samokhvalova-project-five/static/js/2.878a1045.chunk.js.map",
+    "static/js/2.778be703.chunk.js": "/oksana-samokhvalova-project-five/static/js/2.778be703.chunk.js",
+    "static/js/2.778be703.chunk.js.map": "/oksana-samokhvalova-project-five/static/js/2.778be703.chunk.js.map",
     "index.html": "/oksana-samokhvalova-project-five/index.html",
-    "precache-manifest.a0f2ad4b7d98c084af7d868728da68c6.js": "/oksana-samokhvalova-project-five/precache-manifest.a0f2ad4b7d98c084af7d868728da68c6.js",
+    "precache-manifest.23011a7ac361bf7e971079d0ed43a094.js": "/oksana-samokhvalova-project-five/precache-manifest.23011a7ac361bf7e971079d0ed43a094.js",
     "service-worker.js": "/oksana-samokhvalova-project-five/service-worker.js",
-    "static/css/main.e14929af.chunk.css.map": "/oksana-samokhvalova-project-five/static/css/main.e14929af.chunk.css.map",
-    "static/js/2.878a1045.chunk.js.LICENSE.txt": "/oksana-samokhvalova-project-five/static/js/2.878a1045.chunk.js.LICENSE.txt",
+    "static/css/main.06381f05.chunk.css.map": "/oksana-samokhvalova-project-five/static/css/main.06381f05.chunk.css.map",
+    "static/js/2.778be703.chunk.js.LICENSE.txt": "/oksana-samokhvalova-project-five/static/js/2.778be703.chunk.js.LICENSE.txt",
+    "static/media/Selena - Bidi Bidi Bom Bom (Official Music Video).mp3": "/oksana-samokhvalova-project-five/static/media/Selena - Bidi Bidi Bom Bom (Official Music Video).c923c9e0.mp3",
     "static/media/logo.png": "/oksana-samokhvalova-project-five/static/media/logo.12a0f127.png"
   },
   "entrypoints": [
     "static/js/runtime-main.707f4e67.js",
-    "static/js/2.878a1045.chunk.js",
-    "static/css/main.e14929af.chunk.css",
-    "static/js/main.a5436166.chunk.js"
+    "static/js/2.778be703.chunk.js",
+    "static/css/main.06381f05.chunk.css",
+    "static/js/main.70ee6e34.chunk.js"
   ]
 }
