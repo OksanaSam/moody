@@ -26,7 +26,7 @@ class App extends Component {
     this.textInput = React.createRef();
     this.state = {
       //set initial state for Api data
-      boxArray: initialState,
+      boxList: initialState,
       quote: '',
       author: '',
       isToggled: false,
@@ -40,8 +40,23 @@ class App extends Component {
   };
 
 
+  componentDidMount() {
+      const dbRef = firebase.database().ref();
+      dbRef.on('value', (response) => {
+      const newState = [];
+      const data = response.val();
+      for (let key in data) {
+        newState.push(data[key]);
+      }
+      this.setState({
+        boxList: newState
+      });
+      });
+    }
+ 
+
   // getBoxes() {
-  //   return this.state.boxArray.map((box, index) => (
+  //   return this.state.boxList.map((box, index) => (
   //     <PhotoBox
   //         key={index}
   //         mood={box.mood}
@@ -56,7 +71,7 @@ class App extends Component {
   
 
   getBoxes() {
-    const photoBoxes = this.state.boxArray.map((box, index) => (
+    const photoBoxes = this.state.boxList.map((box, index) => (
       <PhotoBox
         key={index}
         mood={box.mood}
@@ -100,7 +115,7 @@ class App extends Component {
     }).then(({ data }) => {
       let url = data.urls.regular;
       let altTag = data.alt_description;
-      const copy = [...this.state.boxArray];
+      const copy = [...this.state.boxList];
       copy[numBox] = {
         url:  url,
         mood: photoMood,
@@ -108,20 +123,20 @@ class App extends Component {
       };
 
       this.setState({
-        boxArray: copy,
+        boxList: copy,
       });   
     });
   };
 
   removeImages = (numBox) => {
-    const copy = [...this.state.boxArray];
+    const copy = [...this.state.boxList];
     copy[numBox] = {
       url:  '',
       mood: '',
       alt: ''
     };
     this.setState({
-      boxArray: copy,
+      boxList: copy,
     });
   };
 
@@ -153,7 +168,7 @@ class App extends Component {
   };
 
   // getBoxes() {
-  //   return this.state.boxArray.map((box, index) => (
+  //   return this.state.boxList.map((box, index) => (
   //     <PhotoBox
   //         key={index}
   //         mood={box.mood}
