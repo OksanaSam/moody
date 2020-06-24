@@ -138,6 +138,15 @@
   }
   /* Hover effect from https://codepen.io/JonahCrary/pen/yVZGxY */
   
+  .palette {
+    display: flex;
+    border: 2px solid black;
+    width: 30px;
+    height: 20px;
+    background-color: #FFFFFF;
+  }
+
+
   /* Main Photo Grid Styles */
   .mainGrid {
     width: 100%;

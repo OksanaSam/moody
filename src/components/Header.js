@@ -29,8 +29,14 @@ class Header extends Component {
                         <div className="logo">
                             <h1>MOODY</h1>
                         </div>
+                        
                         <button className="toggleColor" onClick={this.props.handleToggle}>Toggle</button>
                         <ul className="hamburger">
+                        <div className="palette">
+                            <div className="colorOne"></div>
+                            <div className="colorTwo"></div>
+                            <div className="colorThree"></div>
+                        </div>
                         {/* <input type="checkbox" id="toggle" name="toggle"/> */}
                             
                         </ul>

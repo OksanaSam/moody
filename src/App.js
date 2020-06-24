@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'; 
-// import firebase from './firebase';
+import firebase from './firebase';
 import initialState from './initialState';
 import Header from './components/Header';
 import PhotoBox from './components/PhotoBox';
