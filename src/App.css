@@ -1,5 +1,8 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fredericka+the+Great&display=swap" rel="stylesheet"'); */
   /* @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet"'); */
-  @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet"');
+/* @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet"'); */
+
+ 
   
   
   /* MY STYLES */
@@ -74,7 +77,8 @@
   
   /* header styles */ 
   h1 {
-    font-family: 'Cutive Mono', monospace;
+    font-family: 'Fredericka the Great', cursive;
+    /* font-family: 'Cutive Mono', monospace; */
     font-weight: 500;
   }
   
@@ -140,12 +144,48 @@
   
   .palette {
     display: flex;
-    border: 2px solid black;
-    width: 30px;
+    width: 60px;
     height: 20px;
     background-color: #FFFFFF;
+    justify-content: space-between;
+    padding: 3px 3px 3px 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+      0 2px 2px rgba(0,0,0,0.11), 
+      0 4px 4px rgba(0,0,0,0.11), 
+      0 8px 8px rgba(0,0,0,0.11), 
+      0 16px 16px rgba(0,0,0,0.11), 
+      0 32px 32px rgba(0,0,0,0.11);
   }
 
+  .colorOne, .colorTwo, .colorThree {
+    background-color: #f0e7de;
+    width: 30%;
+  }
+
+  .colorOne.NotToggledClass {
+    background-color: #f0e7de;
+  }
+
+  .colorTwo.NotToggledClass {
+    background-color: #F7CACA;
+  }
+
+  .colorThree.NotToggledClass {
+    background-color: #d0b8b3;
+  }
+
+    /* Toggling Colors */
+  .colorOne.ToggledClass {
+    background-color: #e4e5e7;
+  }
+
+  .colorTwo.ToggledClass {
+    background-color: #89a7bf;
+  }
+
+  .colorThree.ToggledClass {
+    background-color: #c6d3dc;
+  }
 
   /* Main Photo Grid Styles */
   .mainGrid {
@@ -192,7 +232,7 @@
       0 4px 4px rgba(0,0,0,0.12), 
       0 8px 8px rgba(0,0,0,0.12),
       0 16px 16px rgba(0,0,0,0.12); */
-      box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
       0 2px 2px rgba(0,0,0,0.11), 
       0 4px 4px rgba(0,0,0,0.11), 
       0 8px 8px rgba(0,0,0,0.11), 
@@ -216,9 +256,14 @@
     display: flex;
     flex-direction: column;
     align-self: stretch;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     position: relative;
+  }
+
+  .imagePlace.imageEmpty {
+    background-color: #FFFFFF;
+    justify-content: flex-start;
   }
 
   /* Toggling Colors */
@@ -307,6 +352,7 @@
   
   /* FOOTER STARTS */
   .footer {
+    /* font-family: 'Fredericka the Great', cursive; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -349,3 +395,12 @@
   }
   
   /* FOOTER ENDS */
+
+
+ /* MEDIA QUERIES */
+  @media(max-width: 768px) {
+    .wrapper {
+        width: 90%;
+    }
+
+  }

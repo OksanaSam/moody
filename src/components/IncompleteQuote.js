@@ -18,7 +18,7 @@ class IncompleteQuote extends Component {
 
     render() {
         return (
-            <div className='imagePlace'>
+            <div className={`imagePlace ${this.props.newColor}`}>
                 {this.state.showAdd && (
                 <button className="addButton" onClick={this.toggleClass}>
                     <i className="fas fa-plus" />

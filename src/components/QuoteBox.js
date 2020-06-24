@@ -13,9 +13,11 @@ class QuoteBox extends Component {
                         quote={this.props.quote}
                         author={this.props.author}
                         removeQuote={this.props.removeQuote}
+                        newColor={this.props.newColor}
                     />
                 ) : <IncompleteQuote
                         getQuote={this.props.getQuote}
+                        newColor={this.props.newColor}
                     /> }
                     <div className="icons">
                         <div className="leftIcons">

@@ -28,18 +28,16 @@ class Header extends Component {
                     <nav className="navBar">
                         <div className="logo">
                             <h1>MOODY</h1>
+                        <div className="palette">
+                            <div className={`colorOne ${this.props.newColor}`}></div>
+                            <div className={`colorTwo ${this.props.newColor}`}></div>
+                            <div className={`colorThree ${this.props.newColor}`}></div>
+                        </div>
                         </div>
                         
+                        
+                        
                         <button className="toggleColor" onClick={this.props.handleToggle}>Toggle</button>
-                        <ul className="hamburger">
-                        <div className="palette">
-                            <div className="colorOne"></div>
-                            <div className="colorTwo"></div>
-                            <div className="colorThree"></div>
-                        </div>
-                        {/* <input type="checkbox" id="toggle" name="toggle"/> */}
-                            
-                        </ul>
                         <button className="print" onClick={this.handlePrint}><i className="fas fa-print"></i></button>
                     </nav>
                 </div>

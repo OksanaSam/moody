@@ -12,7 +12,9 @@ import Footer from './components/Footer';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faTumblr, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import './App.css';
-import sound from './Selena - Bidi Bidi Bom Bom (Official Music Video).mp3';
+import soundfileBlue from './Selena - Bidi Bidi Bom Bom (Official Music Video).mp3';
+import soundfilePink from './Selena - Bidi Bidi Bom Bom (Official Music Video).mp3';
+import Sound from 'react-sound';
 
 
 
@@ -40,19 +42,19 @@ class App extends Component {
   };
 
 
-  componentDidMount() {
-      const dbRef = firebase.database().ref();
-      dbRef.on('value', (response) => {
-      const newState = [];
-      const data = response.val();
-      for (let key in data) {
-        newState.push(data[key]);
-      }
-      this.setState({
-        boxList: newState
-      });
-      });
-    }
+  // componentDidMount() {
+  //   const dbRef = firebase.database().ref();
+  //   dbRef.on('value', (response) => {
+  //     const newState = [];
+  //     const data = response.val();
+  //     for (let key in data) {
+  //       newState.push(data[key]);
+  //     }
+  //     this.setState({
+  //       boxList: newState
+  //     });
+  //   });
+  // }
  
 
   // getBoxes() {
@@ -70,7 +72,7 @@ class App extends Component {
   // };
   
 
-  getBoxes() {
+  getBoxes(toggledColor) {
     const photoBoxes = this.state.boxList.map((box, index) => (
       <PhotoBox
         key={index}
@@ -80,7 +82,7 @@ class App extends Component {
         numBox={index}
         getImages={this.getImages}
         removeImages={this.removeImages}
-        newColor={this.newColor}
+        newColor={toggledColor}
       />
     ));
     const quoteBox = (
@@ -89,7 +91,7 @@ class App extends Component {
         author={this.state.author}
         removeQuote={this.removeQuote}
         getQuote={this.getQuote}
-        newColor={this.newColor}
+        newColor={this.state.isToggled ? 'ToggledClass' : 'NotToggledClass'}
       />
     );
     return [
@@ -109,7 +111,6 @@ class App extends Component {
         params: {
             client_id: 'Ro76YKYpmutB58ImuEKT8izDBYKA669WYcjJWz-U6TA',
             query: photoMood,
-            // count: 10,
             orientation: 'squarish',
         },
     }).then(({ data }) => {
@@ -124,7 +125,14 @@ class App extends Component {
 
       this.setState({
         boxList: copy,
-      });   
+      });
+
+      for (let box in this.state.boxList) {
+        // console.log(this.state.boxList[box]);
+        const dbRef = firebase.database().ref();
+        dbRef.push(this.state.boxList[box]);
+      }
+     
     });
   };
 
@@ -156,6 +164,9 @@ class App extends Component {
           quote: randomQuote,
           author: author,
         })
+        // pushing the quote to firebase 
+        const dbRef = firebase.database().ref();
+        dbRef.push(this.state.quote);
     })
   };
 
@@ -181,18 +192,29 @@ class App extends Component {
   //   ));
   // };
   
+  
+  // start = () => {
+  //   console.log("this.audio", this.audio)
+  //   this.audio.play();
+  // }
 
   render() {
-    let audio = new Audio({sound})
-    const start = () => {
-      audio.play()
-    }
-    start();
-    const boxes = this.getBoxes();
+    // const provider = new firebase.auth.GoogleAuthProvider();
+    
     const newColor = this.state.isToggled ? 'ToggledClass' : 'NotToggledClass';
+    const boxes = this.getBoxes(newColor);
+    const soundfile = this.state.isToggled ? {soundfileBlue} : {soundfilePink};
+
 
     return (
       <div>
+         {/* <Sound
+            url={soundfile}
+            playStatus={Sound.status.PLAYING}
+            // onLoading={this.handleSongLoading}
+            // onPlaying={this.handleSongPlaying}
+            // onFinishedPlaying={this.handleSongFinishedPlaying}
+          /> */}
         {/* {this.state.isToggled ? 'ToggledClass' : 'NotToggledClass'} */}
         <Header
           handleToggle={this.handleToggle}
@@ -204,7 +226,7 @@ class App extends Component {
               {boxes}
             </div>
             {/* <h1 className={newColor}>ToggledClass</h1> */}
-            {/* <button onClick={start}>Play</button> */}
+            {/* <button onClick={this.start}>Play</button> */}
           </div>
         </div>
         <Footer
