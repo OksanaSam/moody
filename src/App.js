@@ -12,8 +12,10 @@ import Footer from './components/Footer';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faTumblr, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import './App.css';
-import soundfileBlue from './Selena - Bidi Bidi Bom Bom (Official Music Video).mp3';
-import soundfilePink from './Selena - Bidi Bidi Bom Bom (Official Music Video).mp3';
+// import soundfileBlue from './Selena - Bidi Bidi Bom Bom (Official Music Video).mp3';
+// import soundfilePink from './0267 (online-audio-converter.com).mp3';
+// import soundfileBlue from './0267.wav';
+// import soundfilePink from './0267.wav';
 import Sound from 'react-sound';
 
 
@@ -200,22 +202,31 @@ class App extends Component {
 
   render() {
     // const provider = new firebase.auth.GoogleAuthProvider();
-    
     const newColor = this.state.isToggled ? 'ToggledClass' : 'NotToggledClass';
     const boxes = this.getBoxes(newColor);
-    const soundfile = this.state.isToggled ? {soundfileBlue} : {soundfilePink};
+    // const soundfile = this.state.isToggled ? soundfileBlue : soundfilePink;
+    // console.log('soundfile', soundfile);
 
 
     return (
       <div>
-         {/* <Sound
-            url={soundfile}
+        {/* {this.state.isToggled ? (
+          <Sound
+             url={soundfileBlue}
+             playStatus={Sound.status.PLAYING}
+             onLoading={this.handleSongLoading}
+             onPlaying={this.handleSongPlaying}
+             onFinishedPlaying={this.handleSongFinishedPlaying}
+           />
+        ) : (
+          <Sound
+            url={soundfilePink}
             playStatus={Sound.status.PLAYING}
-            // onLoading={this.handleSongLoading}
-            // onPlaying={this.handleSongPlaying}
-            // onFinishedPlaying={this.handleSongFinishedPlaying}
-          /> */}
-        {/* {this.state.isToggled ? 'ToggledClass' : 'NotToggledClass'} */}
+            onLoading={this.handleSongLoading}
+            onPlaying={this.handleSongPlaying}
+            onFinishedPlaying={this.handleSongFinishedPlaying}
+          />
+        )} */}
         <Header
           handleToggle={this.handleToggle}
           newColor={newColor}

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+
 
 class IncompleteImage extends Component {
     constructor() {
@@ -35,15 +36,17 @@ class IncompleteImage extends Component {
         return (
             <div className={`imagePlace ${this.props.newColor}`}>
                 {this.state.showInput && (
-                    // <label for="moodInput" className="sr-only">Word describing your mood</label>
-                    <input
-                        id="moodInput"
-                        className="moodInput"
-                        type="text"
-                        placeholder="Your mood in one word"
-                        ref={this.textInput}
-                        onKeyPress={this.handleKeyPress}
-                    />)}
+                    <>
+                        <label for="moodInput" className="sr-only">Word describing your mood</label>
+                        <input
+                            id="moodInput"
+                            className="moodInput"
+                            type="text"
+                            placeholder="Your mood"
+                            ref={this.textInput}
+                            onKeyPress={this.handleKeyPress}
+                        />
+                    </>)}
                 {/* <p>Incomplete Image</p> */}
                 {this.state.showAdd && (
                 <button className="addButton" onClick={this.toggleClass}>

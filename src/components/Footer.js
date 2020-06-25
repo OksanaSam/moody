@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import logo from '../logo.png';
 
 class Footer extends Component {
+
+    handlePrint = () => {
+        window.print();
+    }
+
     render() {
         return (
             <div className={`footer ${this.props.newColor}`} id="footer">
                 <div className="wrapper">
                     <div className="footerFlex">
-                        <div>
+                        <div className="footerLeft">
                             <img className="footerLogo" src={logo} alt="logo" />
+                            <button className="print" onClick={this.handlePrint}><i className="fas fa-print"></i></button>
                         </div>
                         <ul className="socialIcons">
                             <li><a href="https://github.com/OksanaSam" target="_blank" aria-label="GitHub account"><i aria-hidden="true" className="fab fa-github"></i></a></li>
@@ -23,5 +29,6 @@ class Footer extends Component {
         )
     }
 };
+
 
 export default Footer;
