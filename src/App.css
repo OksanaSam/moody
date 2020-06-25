@@ -278,6 +278,7 @@
   .imagePlace.imageEmpty {
     background-color: #FFFFFF;
     justify-content: flex-start;
+    align-items: center;
   }
 
   /* Toggling Colors */
@@ -424,5 +425,13 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    .frame {
+      width: 100%;
+    }
+
+    .imagePlace img {
+      align-self: center;
     }
   }
