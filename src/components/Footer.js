@@ -12,11 +12,11 @@ class Footer extends Component {
             <div className={`footer ${this.props.newColor}`} id="footer">
                 <div className="wrapper">
                     <div className="footerFlex">
-                        <div className="footerLeft">
+                        <div>
                             <img className="footerLogo" src={logo} alt="logo" />
-                            <button className="print" onClick={this.handlePrint}><i className="fas fa-print"></i></button>
                         </div>
                         <ul className="socialIcons">
+                            <button className="print" onClick={this.handlePrint}><i className="fas fa-print"></i></button>
                             <li><a href="https://github.com/OksanaSam" target="_blank" aria-label="GitHub account"><i aria-hidden="true" className="fab fa-github"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/oksana-samokhvalova-6b03521b0/" target="_blank" aria-label="LinkedIn account"><i aria-hidden="true" className="fab fa-linkedin-in"></i></a></li>
                             <li><a href="https://twitter.com/oksanadev" target="_blank" aria-label="Twitter Account"><i aria-hidden="true" className="fab fa-twitter"></i></a></li>

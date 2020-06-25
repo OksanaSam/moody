@@ -23,9 +23,6 @@ class IncompleteImage extends Component {
     };
 
     toggleClass = () => {
-        // const oldStyle = document.getElementById('moodInput').className;
-        // const newClassName = oldStyle === 'moodInput' ? 'moodInputNew' : 'moodInput'
-        // document.getElementById('moodInput').className =  newClassName;
         this.setState({
             showInput: !this.state.showInput,
             showAdd: !this.state.showAdd,

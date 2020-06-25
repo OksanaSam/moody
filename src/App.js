@@ -1,27 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios'; 
-import firebase from './firebase';
 import initialState from './initialState';
 import Header from './components/Header';
 import PhotoBox from './components/PhotoBox';
 import QuoteBox from './components/QuoteBox';
 import Footer from './components/Footer';
-// import './font-awesome.min.css';
-// import 'font-awesome/css/font-awesome.min.css';
-// import 'font-awesome/css/font-awesome.min.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faTumblr, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import './App.css';
-// import soundfileBlue from './Selena - Bidi Bidi Bom Bom (Official Music Video).mp3';
-// import soundfilePink from './0267 (online-audio-converter.com).mp3';
-// import soundfileBlue from './0267.wav';
-// import soundfilePink from './0267.wav';
+import soundfilePink from './Erik Satie_20170606_128.mp3';
+import soundfileBlue from './0267 (online-audio-converter.com).mp3';
 import Sound from 'react-sound';
-
-
-
-// import sweet alerts
-// import Swal from "sweetalert2";
 
 
 class App extends Component {
@@ -29,7 +16,7 @@ class App extends Component {
     super();
     this.textInput = React.createRef();
     this.state = {
-      //set initial state for Api data
+      //initial state is stored in a separate file
       boxList: initialState,
       quote: '',
       author: '',
@@ -42,36 +29,6 @@ class App extends Component {
       isToggled: !this.state.isToggled,  
     })
   };
-
-
-  // componentDidMount() {
-  //   const dbRef = firebase.database().ref();
-  //   dbRef.on('value', (response) => {
-  //     const newState = [];
-  //     const data = response.val();
-  //     for (let key in data) {
-  //       newState.push(data[key]);
-  //     }
-  //     this.setState({
-  //       boxList: newState
-  //     });
-  //   });
-  // }
- 
-
-  // getBoxes() {
-  //   return this.state.boxList.map((box, index) => (
-  //     <PhotoBox
-  //         key={index}
-  //         mood={box.mood}
-  //         url={box.url}
-  //         altTag={box.alt}
-  //         numBox={index}
-  //         getImages={this.getImages}
-  //         removeImages={this.removeImages}
-  //     />
-  //   ));
-  // };
   
 
   getBoxes(toggledColor) {
@@ -104,7 +61,7 @@ class App extends Component {
   }
 
 
- // Getting Images from Unsplash 
+ // Getting images from Unsplash API
   getImages = (photoMood, numBox) => {
     axios({
         url: 'https://api.unsplash.com/photos/random',
@@ -128,13 +85,6 @@ class App extends Component {
       this.setState({
         boxList: copy,
       });
-
-      for (let box in this.state.boxList) {
-        // console.log(this.state.boxList[box]);
-        const dbRef = firebase.database().ref();
-        dbRef.push(this.state.boxList[box]);
-      }
-     
     });
   };
 
@@ -159,20 +109,21 @@ class App extends Component {
         responseType: 'json',
         params: {}
     }).then(({ data }) => {
-        let quoteId = Math.floor(Math.random() * data.length);
-        let randomQuote = data[quoteId].text;
-        let author = data[quoteId].author;
-        this.setState({
-          quote: randomQuote,
-          author: author,
-        })
-        // pushing the quote to firebase 
-        const dbRef = firebase.database().ref();
-        dbRef.push(this.state.quote);
+      const filterQuotes = function(text){
+        return text.text.length < 50;
+      };
+      let filteredData = data.filter(filterQuotes);
+      let quoteId = Math.floor(Math.random() * filteredData.length);
+      let randomQuote = filteredData[quoteId].text;
+      let author = filteredData[quoteId].author;
+      this.setState({
+        quote: randomQuote,
+        author: author,
+      })
     })
   };
 
-
+// Removing the quote from UI
   removeQuote = () => {
     this.setState({
       quote: '',
@@ -180,37 +131,15 @@ class App extends Component {
     });
   };
 
-  // getBoxes() {
-  //   return this.state.boxList.map((box, index) => (
-  //     <PhotoBox
-  //         key={index}
-  //         mood={box.mood}
-  //         url={box.url}
-  //         altTag={box.alt}
-  //         numBox={index}
-  //         getImages={this.getImages}
-  //         removeImages={this.removeImages}
-  //     />
-  //   ));
-  // };
-  
-  
-  // start = () => {
-  //   console.log("this.audio", this.audio)
-  //   this.audio.play();
-  // }
-
   render() {
-    // const provider = new firebase.auth.GoogleAuthProvider();
     const newColor = this.state.isToggled ? 'ToggledClass' : 'NotToggledClass';
     const boxes = this.getBoxes(newColor);
     // const soundfile = this.state.isToggled ? soundfileBlue : soundfilePink;
-    // console.log('soundfile', soundfile);
 
 
     return (
       <div>
-        {/* {this.state.isToggled ? (
+        {this.state.isToggled ? (
           <Sound
              url={soundfileBlue}
              playStatus={Sound.status.PLAYING}
@@ -226,7 +155,7 @@ class App extends Component {
             onPlaying={this.handleSongPlaying}
             onFinishedPlaying={this.handleSongFinishedPlaying}
           />
-        )} */}
+        )}
         <Header
           handleToggle={this.handleToggle}
           newColor={newColor}
@@ -236,8 +165,6 @@ class App extends Component {
             <div className="mainGrid" id="mainGrid">
               {boxes}
             </div>
-            {/* <h1 className={newColor}>ToggledClass</h1> */}
-            {/* <button onClick={this.start}>Play</button> */}
           </div>
         </div>
         <Footer
