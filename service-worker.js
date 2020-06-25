@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/oksana-samokhvalova-project-five/precache-manifest.1517d5a0ec5ef81035a87c11da259234.js"
+  "/oksana-samokhvalova-project-five/precache-manifest.3bc82c2af37ddd38f0e9705b0156fc6a.js"
 );
 
 self.addEventListener('message', (event) => {

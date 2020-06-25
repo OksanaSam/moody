@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/oksana-samokhvalova-project-five/static/css/main.6b05e998.chunk.css",
-    "main.js": "/oksana-samokhvalova-project-five/static/js/main.202131e3.chunk.js",
-    "main.js.map": "/oksana-samokhvalova-project-five/static/js/main.202131e3.chunk.js.map",
+    "main.css": "/oksana-samokhvalova-project-five/static/css/main.6cfe93f2.chunk.css",
+    "main.js": "/oksana-samokhvalova-project-five/static/js/main.5676daee.chunk.js",
+    "main.js.map": "/oksana-samokhvalova-project-five/static/js/main.5676daee.chunk.js.map",
     "runtime-main.js": "/oksana-samokhvalova-project-five/static/js/runtime-main.707f4e67.js",
     "runtime-main.js.map": "/oksana-samokhvalova-project-five/static/js/runtime-main.707f4e67.js.map",
-    "static/js/2.9b23f839.chunk.js": "/oksana-samokhvalova-project-five/static/js/2.9b23f839.chunk.js",
-    "static/js/2.9b23f839.chunk.js.map": "/oksana-samokhvalova-project-five/static/js/2.9b23f839.chunk.js.map",
+    "static/js/2.578a0fdd.chunk.js": "/oksana-samokhvalova-project-five/static/js/2.578a0fdd.chunk.js",
+    "static/js/2.578a0fdd.chunk.js.map": "/oksana-samokhvalova-project-five/static/js/2.578a0fdd.chunk.js.map",
     "index.html": "/oksana-samokhvalova-project-five/index.html",
-    "precache-manifest.1517d5a0ec5ef81035a87c11da259234.js": "/oksana-samokhvalova-project-five/precache-manifest.1517d5a0ec5ef81035a87c11da259234.js",
+    "precache-manifest.3bc82c2af37ddd38f0e9705b0156fc6a.js": "/oksana-samokhvalova-project-five/precache-manifest.3bc82c2af37ddd38f0e9705b0156fc6a.js",
     "service-worker.js": "/oksana-samokhvalova-project-five/service-worker.js",
-    "static/css/main.6b05e998.chunk.css.map": "/oksana-samokhvalova-project-five/static/css/main.6b05e998.chunk.css.map",
-    "static/js/2.9b23f839.chunk.js.LICENSE.txt": "/oksana-samokhvalova-project-five/static/js/2.9b23f839.chunk.js.LICENSE.txt",
+    "static/css/main.6cfe93f2.chunk.css.map": "/oksana-samokhvalova-project-five/static/css/main.6cfe93f2.chunk.css.map",
+    "static/js/2.578a0fdd.chunk.js.LICENSE.txt": "/oksana-samokhvalova-project-five/static/js/2.578a0fdd.chunk.js.LICENSE.txt",
+    "static/media/0267 (online-audio-converter.com).mp3": "/oksana-samokhvalova-project-five/static/media/0267 (online-audio-converter.com).df2dcf9d.mp3",
+    "static/media/Erik Satie_20170606_128.mp3": "/oksana-samokhvalova-project-five/static/media/Erik Satie_20170606_128.39756aea.mp3",
     "static/media/logo.png": "/oksana-samokhvalova-project-five/static/media/logo.12a0f127.png"
   },
   "entrypoints": [
     "static/js/runtime-main.707f4e67.js",
-    "static/js/2.9b23f839.chunk.js",
-    "static/css/main.6b05e998.chunk.css",
-    "static/js/main.202131e3.chunk.js"
+    "static/js/2.578a0fdd.chunk.js",
+    "static/css/main.6cfe93f2.chunk.css",
+    "static/js/main.5676daee.chunk.js"
   ]
 }
