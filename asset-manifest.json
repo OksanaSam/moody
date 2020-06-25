@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/oksana-samokhvalova-project-five/static/css/main.b45df3f4.chunk.css",
+    "main.css": "/oksana-samokhvalova-project-five/static/css/main.70ec0485.chunk.css",
     "main.js": "/oksana-samokhvalova-project-five/static/js/main.5676daee.chunk.js",
     "main.js.map": "/oksana-samokhvalova-project-five/static/js/main.5676daee.chunk.js.map",
     "runtime-main.js": "/oksana-samokhvalova-project-five/static/js/runtime-main.707f4e67.js",
@@ -8,9 +8,9 @@
     "static/js/2.578a0fdd.chunk.js": "/oksana-samokhvalova-project-five/static/js/2.578a0fdd.chunk.js",
     "static/js/2.578a0fdd.chunk.js.map": "/oksana-samokhvalova-project-five/static/js/2.578a0fdd.chunk.js.map",
     "index.html": "/oksana-samokhvalova-project-five/index.html",
-    "precache-manifest.ca3a38602e0ad88cf6159c7c22b25bb2.js": "/oksana-samokhvalova-project-five/precache-manifest.ca3a38602e0ad88cf6159c7c22b25bb2.js",
+    "precache-manifest.16b1fd4950ab4dbc321286d3d2cb8f7d.js": "/oksana-samokhvalova-project-five/precache-manifest.16b1fd4950ab4dbc321286d3d2cb8f7d.js",
     "service-worker.js": "/oksana-samokhvalova-project-five/service-worker.js",
-    "static/css/main.b45df3f4.chunk.css.map": "/oksana-samokhvalova-project-five/static/css/main.b45df3f4.chunk.css.map",
+    "static/css/main.70ec0485.chunk.css.map": "/oksana-samokhvalova-project-five/static/css/main.70ec0485.chunk.css.map",
     "static/js/2.578a0fdd.chunk.js.LICENSE.txt": "/oksana-samokhvalova-project-five/static/js/2.578a0fdd.chunk.js.LICENSE.txt",
     "static/media/0267 (online-audio-converter.com).mp3": "/oksana-samokhvalova-project-five/static/media/0267 (online-audio-converter.com).df2dcf9d.mp3",
     "static/media/Erik Satie_20170606_128.mp3": "/oksana-samokhvalova-project-five/static/media/Erik Satie_20170606_128.39756aea.mp3",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.707f4e67.js",
     "static/js/2.578a0fdd.chunk.js",
-    "static/css/main.b45df3f4.chunk.css",
+    "static/css/main.70ec0485.chunk.css",
     "static/js/main.5676daee.chunk.js"
   ]
 }
