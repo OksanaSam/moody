@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "729e33161ae6ff40f61b452f5aa2645a",
+    "revision": "da179ea87e0eea5fd87194796303a728",
     "url": "/oksana-samokhvalova-project-five/index.html"
   },
   {
-    "revision": "910f7941d06edd416772",
+    "revision": "fac546a646f047b83f04",
     "url": "/oksana-samokhvalova-project-five/static/css/main.8e9afb27.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/oksana-samokhvalova-project-five/static/js/2.578a0fdd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "910f7941d06edd416772",
-    "url": "/oksana-samokhvalova-project-five/static/js/main.5676daee.chunk.js"
+    "revision": "fac546a646f047b83f04",
+    "url": "/oksana-samokhvalova-project-five/static/js/main.201b7ffa.chunk.js"
   },
   {
     "revision": "af45eea21503439c8ce7",
