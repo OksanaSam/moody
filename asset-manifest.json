@@ -1,25 +1,23 @@
 {
   "files": {
-    "main.css": "/oksana-samokhvalova-project-five/static/css/main.8e9afb27.chunk.css",
-    "main.js": "/oksana-samokhvalova-project-five/static/js/main.201b7ffa.chunk.js",
-    "main.js.map": "/oksana-samokhvalova-project-five/static/js/main.201b7ffa.chunk.js.map",
-    "runtime-main.js": "/oksana-samokhvalova-project-five/static/js/runtime-main.707f4e67.js",
-    "runtime-main.js.map": "/oksana-samokhvalova-project-five/static/js/runtime-main.707f4e67.js.map",
-    "static/js/2.578a0fdd.chunk.js": "/oksana-samokhvalova-project-five/static/js/2.578a0fdd.chunk.js",
-    "static/js/2.578a0fdd.chunk.js.map": "/oksana-samokhvalova-project-five/static/js/2.578a0fdd.chunk.js.map",
-    "index.html": "/oksana-samokhvalova-project-five/index.html",
-    "precache-manifest.e35d3feaf6fcf56d42e3d5b135b60f3e.js": "/oksana-samokhvalova-project-five/precache-manifest.e35d3feaf6fcf56d42e3d5b135b60f3e.js",
-    "service-worker.js": "/oksana-samokhvalova-project-five/service-worker.js",
-    "static/css/main.8e9afb27.chunk.css.map": "/oksana-samokhvalova-project-five/static/css/main.8e9afb27.chunk.css.map",
-    "static/js/2.578a0fdd.chunk.js.LICENSE.txt": "/oksana-samokhvalova-project-five/static/js/2.578a0fdd.chunk.js.LICENSE.txt",
-    "static/media/0267 (online-audio-converter.com).mp3": "/oksana-samokhvalova-project-five/static/media/0267 (online-audio-converter.com).df2dcf9d.mp3",
-    "static/media/Erik Satie_20170606_128.mp3": "/oksana-samokhvalova-project-five/static/media/Erik Satie_20170606_128.39756aea.mp3",
-    "static/media/logo.png": "/oksana-samokhvalova-project-five/static/media/logo.12a0f127.png"
+    "main.css": "./static/css/main.75df9f48.chunk.css",
+    "main.js": "./static/js/main.bbeced63.chunk.js",
+    "main.js.map": "./static/js/main.bbeced63.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.893301b1.js",
+    "runtime-main.js.map": "./static/js/runtime-main.893301b1.js.map",
+    "static/js/2.bb5fc629.chunk.js": "./static/js/2.bb5fc629.chunk.js",
+    "static/js/2.bb5fc629.chunk.js.map": "./static/js/2.bb5fc629.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.375a83c9558d88ee414eaa154607ea20.js": "./precache-manifest.375a83c9558d88ee414eaa154607ea20.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.75df9f48.chunk.css.map": "./static/css/main.75df9f48.chunk.css.map",
+    "static/js/2.bb5fc629.chunk.js.LICENSE.txt": "./static/js/2.bb5fc629.chunk.js.LICENSE.txt",
+    "static/media/mintbean.png": "./static/media/mintbean.cf18b629.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.707f4e67.js",
-    "static/js/2.578a0fdd.chunk.js",
-    "static/css/main.8e9afb27.chunk.css",
-    "static/js/main.201b7ffa.chunk.js"
+    "static/js/runtime-main.893301b1.js",
+    "static/js/2.bb5fc629.chunk.js",
+    "static/css/main.75df9f48.chunk.css",
+    "static/js/main.bbeced63.chunk.js"
   ]
 }
