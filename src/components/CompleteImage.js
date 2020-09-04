@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class CompleteImage  extends Component {
-    handleClick = () => {
-        this.props.removeImages(this.props.numBox);
+function CompleteImage(props) {
+    const handleClick = () => {
+        props.removeImages(props.numBox);
     };
     
-    render() {
-        return (
-            <div className="imagePlace imageEmpty">
-                <button className="closeButton" onClick={this.handleClick}><i className="fas fa-times"></i></button>
-                <img src={this.props.url} alt={this.props.altTag}/>
-            </div>
-        );
-    }
+    return (
+        <div className="imagePlace imageEmpty">
+            <button className="closeButton" onClick={handleClick}><i className="fas fa-times"></i></button>
+            <img src={props.url} alt={props.altTag}/>
+        </div>
+    );
 };
 
 export default CompleteImage;

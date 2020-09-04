@@ -45,7 +45,8 @@ class App extends Component {
       />
     ));
     const quoteBox = (
-      <QuoteBox 
+      <QuoteBox
+        key={new Date()} 
         quote={this.state.quote}
         author={this.state.author}
         removeQuote={this.removeQuote}
@@ -134,7 +135,6 @@ class App extends Component {
   render() {
     const newColor = this.state.isToggled ? 'ToggledClass' : 'NotToggledClass';
     const boxes = this.getBoxes(newColor);
-    // const soundfile = this.state.isToggled ? soundfileBlue : soundfilePink;
 
 
     return (
