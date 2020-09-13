@@ -1,24 +1,23 @@
-import React, { Component } from "react";
-import axios from "axios";
-import initialState from "./initialState";
-import Header from "./components/Header";
-import PhotoBox from "./components/PhotoBox";
-import QuoteBox from "./components/QuoteBox";
-import Footer from "./components/Footer";
-import "./App.css";
-import soundfilePink from "./Erik Satie_20170606_128.mp3";
-import soundfileBlue from "./0267 (online-audio-converter.com).mp3";
-import Sound from "react-sound";
+import React, { Component } from 'react';
+import axios from 'axios';
+import initialState from './initialState';
+import Header from './components/Header';
+import PhotoBox from './components/PhotoBox';
+import QuoteBox from './components/QuoteBox';
+import Footer from './components/Footer';
+import './App.css';
+import soundfilePink from './Erik Satie_20170606_128.mp3';
+import soundfileBlue from './0267 (online-audio-converter.com).mp3';
+import Sound from 'react-sound';
 
 class App extends Component {
   constructor() {
     super();
-    // this.textInput = React.createRef();
     this.state = {
       //initial state is stored in a separate file
       boxList: initialState,
-      quote: "",
-      author: "",
+      quote: '',
+      author: '',
       isToggled: false,
     };
   }
@@ -49,7 +48,7 @@ class App extends Component {
         author={this.state.author}
         removeQuote={this.removeQuote}
         getQuote={this.getQuote}
-        newColor={this.state.isToggled ? "ToggledClass" : "NotToggledClass"}
+        newColor={this.state.isToggled ? 'ToggledClass' : 'NotToggledClass'}
       />
     );
     return [photoBoxes[0], quoteBox, ...photoBoxes.slice(1)];
@@ -59,13 +58,13 @@ class App extends Component {
   getImages = async (photoMood, numBox) => {
     try {
       let response = await axios({
-        url: "https://api.unsplash.com/photos/random",
-        method: "GET",
-        responseType: "json",
+        url: 'https://api.unsplash.com/photos/random',
+        method: 'GET',
+        responseType: 'json',
         params: {
-          client_id: "Ro76YKYpmutB58ImuEKT8izDBYKA669WYcjJWz-U6TA",
+          client_id: 'Ro76YKYpmutB58ImuEKT8izDBYKA669WYcjJWz-U6TA',
           query: photoMood,
-          orientation: "squarish",
+          orientation: 'squarish',
         },
       });
       let url = response.data.urls.regular;
@@ -87,9 +86,9 @@ class App extends Component {
   removeImages = (numBox) => {
     const copy = [...this.state.boxList];
     copy[numBox] = {
-      url: "",
-      mood: "",
-      alt: "",
+      url: '',
+      mood: '',
+      alt: '',
     };
     this.setState({
       boxList: copy,
@@ -100,9 +99,9 @@ class App extends Component {
   getQuote = async () => {
     try {
       let response = await axios({
-        url: "https://type.fit/api/quotes",
-        method: "GET",
-        responseType: "json",
+        url: 'https://type.fit/api/quotes',
+        method: 'GET',
+        responseType: 'json',
         params: {},
       });
       const filterQuotes = function (text) {
@@ -124,13 +123,13 @@ class App extends Component {
   // Removing the quote from UI
   removeQuote = () => {
     this.setState({
-      quote: "",
-      author: "",
+      quote: '',
+      author: '',
     });
   };
 
   render() {
-    const newColor = this.state.isToggled ? "ToggledClass" : "NotToggledClass";
+    const newColor = this.state.isToggled ? 'ToggledClass' : 'NotToggledClass';
     const boxes = this.getBoxes(newColor);
 
     return (
