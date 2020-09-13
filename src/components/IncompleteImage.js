@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class IncompleteImage extends Component {
   constructor() {
@@ -6,17 +6,17 @@ class IncompleteImage extends Component {
     this.state = {
       showInput: false,
       showAdd: true,
-      textInput: "",
+      textInput: '',
     };
 
     this.toggleClass = this.toggleClass.bind(this);
   }
 
   handleKeyPress = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       if (!this.state.textInput) return;
       this.props.getImages(this.state.textInput, this.props.numBox);
-      this.setState({ textInput: "" });
+      this.setState({ textInput: '' });
     }
   };
 
