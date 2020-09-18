@@ -7,16 +7,25 @@ function Footer(props) {
   };
 
   return (
-    <div className={`footer ${props.newColor}`} id="footer">
+    <footer role="contentinfo" className={`footer ${props.newColor}`} id="footer">
       <div className="wrapper">
         <div className="footerFlex">
           <div>
             <img className="footerLogo" src={logo} alt="logo" />
           </div>
           <ul className="socialIcons">
-            <button className="print" onClick={handlePrint}>
-              <i className="fas fa-print"></i>
-            </button>
+            <li>
+              <label htmlFor="printButton">
+                <button
+                  id="printButton"
+                  className="print"
+                  onClick={handlePrint}
+                  aria-label="Print the page"
+                >
+                  <i className="fas fa-print"></i>
+                </button>
+              </label>
+            </li>
             <li>
               <a
                 href="https://github.com/OksanaSam"
@@ -61,7 +70,7 @@ function Footer(props) {
         </div>
         <p className="copyright">© 2020 Oksana Samokhvalova</p>
       </div>
-    </div>
+    </footer>
   );
 }
 

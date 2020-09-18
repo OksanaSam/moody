@@ -6,7 +6,15 @@ function CompleteQuote(props) {
   };
   return (
     <div className={`imagePlace ${props.newColor}`}>
-      <button className="closeButton" onClick={handleClick}>
+      <label htmlFor="closeButton" className="sr-only">
+        Close the content
+      </label>
+      <button
+        id="closeButton"
+        className="closeButton"
+        onClick={handleClick}
+        aria-label="Close the content"
+      >
         <i className="fas fa-times"></i>
       </button>
       <p className="randomQuote">{props.quote}</p>
