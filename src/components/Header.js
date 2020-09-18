@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header(props) {
   return (
-    <div className={`header ${props.newColor}`} id="header">
+    <header className={`header ${props.newColor}`} id="header" role="banner">
       <div className="wrapper">
         <nav className="navBar">
           <div className="logo">
@@ -14,12 +14,22 @@ function Header(props) {
             </div>
           </div>
           <label className="switch">
-            <input type="checkbox" defaultChecked onChange={props.handleToggle} />
+            <label htmlFor="switchColor" className="sr-only">
+              Switch Color Theme
+            </label>
+            <input
+              id="switchColor"
+              name="switchColor"
+              type="checkbox"
+              defaultChecked
+              onChange={props.handleToggle}
+            />
+
             <span className="slider"></span>
           </label>
         </nav>
       </div>
-    </div>
+    </header>
   );
 }
 

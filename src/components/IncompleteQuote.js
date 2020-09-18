@@ -20,9 +20,16 @@ class IncompleteQuote extends Component {
     return (
       <div className={`imagePlace ${this.props.newColor}`}>
         {this.state.showAdd && (
-          <button className="addButton" onClick={this.toggleClass}>
-            <i className="fas fa-plus" />
-          </button>
+          <label htmlFor="addButton">
+            <button
+              id="addButton"
+              className="addButton"
+              onClick={this.toggleClass}
+              aria-label="Make input field appear"
+            >
+              <i className="fas fa-plus" />
+            </button>
+          </label>
         )}
       </div>
     );

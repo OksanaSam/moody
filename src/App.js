@@ -133,7 +133,7 @@ class App extends Component {
     const boxes = this.getBoxes(newColor);
 
     return (
-      <div>
+      <>
         {this.state.isToggled ? (
           <Sound
             url={soundfileBlue}
@@ -152,15 +152,15 @@ class App extends Component {
           />
         )}
         <Header handleToggle={this.handleToggle} newColor={newColor} />
-        <div className={`mainContainer ${newColor}`}>
+        <main role="main" className={`mainContainer ${newColor}`}>
           <div className="wrapper">
             <div className="mainGrid" id="mainGrid">
               {boxes}
             </div>
           </div>
-        </div>
+        </main>
         <Footer newColor={newColor} />
-      </div>
+      </>
     );
   }
 }
