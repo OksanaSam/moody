@@ -19,6 +19,7 @@ class App extends Component {
       quote: '',
       author: '',
       isToggled: false,
+      play: 'PLAYING',
     };
   }
 
@@ -128,6 +129,13 @@ class App extends Component {
     });
   };
 
+  handleClick = () => {
+    this.setState({
+      ...this.state,
+      play: 'PAUSED',
+    });
+  };
+
   render() {
     const newColor = this.state.isToggled ? 'ToggledClass' : 'NotToggledClass';
     const boxes = this.getBoxes(newColor);
@@ -137,7 +145,7 @@ class App extends Component {
         {this.state.isToggled ? (
           <Sound
             url={soundfileBlue}
-            playStatus={Sound.status.PLAYING}
+            playStatus={Sound.status[this.state.play]}
             onLoading={this.handleSongLoading}
             onPlaying={this.handleSongPlaying}
             onFinishedPlaying={this.handleSongFinishedPlaying}
@@ -145,13 +153,17 @@ class App extends Component {
         ) : (
           <Sound
             url={soundfilePink}
-            playStatus={Sound.status.PLAYING}
+            playStatus={Sound.status[this.state.play]}
             onLoading={this.handleSongLoading}
             onPlaying={this.handleSongPlaying}
             onFinishedPlaying={this.handleSongFinishedPlaying}
           />
         )}
-        <Header handleToggle={this.handleToggle} newColor={newColor} />
+        <Header
+          handlePause={this.handleClick}
+          handleToggle={this.handleToggle}
+          newColor={newColor}
+        />
         <main role="main" className={`mainContainer ${newColor}`}>
           <div className="wrapper">
             <div className="mainGrid" id="mainGrid">

@@ -1,4 +1,7 @@
 import React from 'react';
+import { FaPlayCircle, FaRegPauseCircle, FaPauseCircle } from 'react-icons/fa';
+
+import { GiPauseButton } from 'react-icons/gi';
 
 function Header(props) {
   return (
@@ -13,6 +16,9 @@ function Header(props) {
               <div className={`colorThree ${props.newColor}`}></div>
             </div>
           </div>
+          <button onClick={props.handlePause} style={{ color: 'white', fontSize: '25px' }}>
+            <FaPauseCircle />
+          </button>
           <label className="switch">
             <label htmlFor="switchColor" className="sr-only">
               Switch Color Theme
