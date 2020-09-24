@@ -57,6 +57,8 @@ class App extends Component {
   }
 
   // Getting images from Unsplash API
+
+  key = process.env.REACT_APP_KEY;
   getImages = async (photoMood, numBox) => {
     try {
       let response = await axios({
@@ -64,7 +66,7 @@ class App extends Component {
         method: 'GET',
         responseType: 'json',
         params: {
-          client_id: 'Ro76YKYpmutB58ImuEKT8izDBYKA669WYcjJWz-U6TA',
+          client_id: this.key,
           query: photoMood,
           orientation: 'squarish',
         },
