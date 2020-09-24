@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../logo.png';
+import logo from '../assets/logo.png';
 
 function Footer(props) {
   const handlePrint = () => {

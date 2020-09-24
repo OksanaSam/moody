@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import initialState from './initialState';
-import Header from './components/Header';
-import PhotoBox from './components/PhotoBox';
-import QuoteBox from './components/QuoteBox';
-import Footer from './components/Footer';
-import './App.css';
-import soundfilePink from './Erik Satie_20170606_128.mp3';
-import soundfileBlue from './0267 (online-audio-converter.com).mp3';
+import initialState from '../initialState';
+import Header from './Header';
+import PhotoBox from './PhotoBox';
+import QuoteBox from './QuoteBox';
+import Footer from './Footer';
+import '../styles/App.css';
+import soundfilePink from '../sound/Erik Satie_20170606_128.mp3';
+import soundfileBlue from '../sound/seamusic.mp3';
 import Sound from 'react-sound';
 
 class App extends Component {
@@ -19,12 +19,13 @@ class App extends Component {
       quote: '',
       author: '',
       isToggled: false,
-      play: 'PLAYING',
+      isPlaying: true,
     };
   }
 
   handleToggle = () => {
     this.setState({
+      ...this.state,
       isToggled: !this.state.isToggled,
     });
   };
@@ -129,10 +130,10 @@ class App extends Component {
     });
   };
 
-  handleClick = () => {
+  handlePause = () => {
     this.setState({
       ...this.state,
-      play: 'PAUSED',
+      isPlaying: !this.state.isPlaying,
     });
   };
 
@@ -140,12 +141,14 @@ class App extends Component {
     const newColor = this.state.isToggled ? 'ToggledClass' : 'NotToggledClass';
     const boxes = this.getBoxes(newColor);
 
+    const isPlaying = this.state.isPlaying === true ? 'PLAYING' : 'PAUSED';
+
     return (
       <>
         {this.state.isToggled ? (
           <Sound
             url={soundfileBlue}
-            playStatus={Sound.status[this.state.play]}
+            playStatus={Sound.status[isPlaying]}
             onLoading={this.handleSongLoading}
             onPlaying={this.handleSongPlaying}
             onFinishedPlaying={this.handleSongFinishedPlaying}
@@ -153,14 +156,15 @@ class App extends Component {
         ) : (
           <Sound
             url={soundfilePink}
-            playStatus={Sound.status[this.state.play]}
+            playStatus={Sound.status[isPlaying]}
             onLoading={this.handleSongLoading}
             onPlaying={this.handleSongPlaying}
             onFinishedPlaying={this.handleSongFinishedPlaying}
           />
         )}
         <Header
-          handlePause={this.handleClick}
+          handlePause={this.handlePause}
+          isPlaying={this.state.isPlaying}
           handleToggle={this.handleToggle}
           newColor={newColor}
         />
