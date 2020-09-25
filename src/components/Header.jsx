@@ -1,22 +1,24 @@
 import React from 'react';
 import { FaPlayCircle, FaPauseCircle } from 'react-icons/fa';
+import { connect } from 'react-redux';
+import { togglePlaying } from '../actions';
 
-function Header({ newColor, isPlaying, handlePause, handleToggle }) {
+function Header(props) {
   return (
-    <header className={`header ${newColor}`} id="header" role="banner">
+    <header className={`header ${props.newColor}`} id="header" role="banner">
       <div className="wrapper">
         <nav className="navBar">
           <div className="logo">
             <h1>MOODY</h1>
             <div className="palette">
-              <div className={`colorOne ${newColor}`}></div>
-              <div className={`colorTwo ${newColor}`}></div>
-              <div className={`colorThree ${newColor}`}></div>
+              <div className={`colorOne ${props.newColor}`}></div>
+              <div className={`colorTwo ${props.newColor}`}></div>
+              <div className={`colorThree ${props.newColor}`}></div>
             </div>
           </div>
           <div className="rightNav">
-            <button className="pauseButton" onClick={handlePause}>
-              {isPlaying ? <FaPauseCircle /> : <FaPlayCircle />}
+            <button className="pauseButton" onClick={props.togglePlaying}>
+              {props.isPlaying ? <FaPauseCircle /> : <FaPlayCircle />}
             </button>
             <label className="switch">
               <label htmlFor="switchColor" className="sr-only">
@@ -27,7 +29,7 @@ function Header({ newColor, isPlaying, handlePause, handleToggle }) {
                 name="switchColor"
                 type="checkbox"
                 defaultChecked
-                onChange={handleToggle}
+                onChange={props.handleToggle}
               />
 
               <span className="slider"></span>
@@ -39,4 +41,11 @@ function Header({ newColor, isPlaying, handlePause, handleToggle }) {
   );
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    isPlaying: state.isPlaying,
+    otherState: state,
+  };
+};
+
+export default connect(mapStateToProps, { togglePlaying })(Header);

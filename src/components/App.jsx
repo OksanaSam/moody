@@ -9,6 +9,8 @@ import '../styles/App.css';
 import soundfilePink from '../sound/Erik Satie_20170606_128.mp3';
 import soundfileBlue from '../sound/seamusic.mp3';
 import Sound from 'react-sound';
+import { connect } from 'react-redux';
+import { togglePlaying } from '../actions';
 
 class App extends Component {
   constructor() {
@@ -19,7 +21,7 @@ class App extends Component {
       quote: '',
       author: '',
       isToggled: false,
-      isPlaying: true,
+      // isPlaying: true,
     };
   }
 
@@ -57,7 +59,6 @@ class App extends Component {
   }
 
   // Getting images from Unsplash API
-
   key = process.env.REACT_APP_KEY;
   getImages = async (photoMood, numBox) => {
     try {
@@ -132,18 +133,12 @@ class App extends Component {
     });
   };
 
-  handlePause = () => {
-    this.setState({
-      ...this.state,
-      isPlaying: !this.state.isPlaying,
-    });
-  };
-
   render() {
     const newColor = this.state.isToggled ? 'ToggledClass' : 'NotToggledClass';
     const boxes = this.getBoxes(newColor);
 
-    const isPlaying = this.state.isPlaying === true ? 'PLAYING' : 'PAUSED';
+    console.log('is playing', this.props.isPlaying);
+    const isPlaying = this.props.isPlaying ? 'PLAYING' : 'PAUSED';
 
     return (
       <>
@@ -164,12 +159,7 @@ class App extends Component {
             onFinishedPlaying={this.handleSongFinishedPlaying}
           />
         )}
-        <Header
-          handlePause={this.handlePause}
-          isPlaying={this.state.isPlaying}
-          handleToggle={this.handleToggle}
-          newColor={newColor}
-        />
+        <Header handleToggle={this.handleToggle} newColor={newColor} />
         <main role="main" className={`mainContainer ${newColor}`}>
           <div className="wrapper">
             <div className="mainGrid" id="mainGrid">
@@ -183,4 +173,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return { isPlaying: state.isPlaying };
+};
+
+export default connect(mapStateToProps, { togglePlaying })(App);
