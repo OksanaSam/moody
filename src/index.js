@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+import App from './components/App.jsx';
+import reducers from './reducers';
 
 const config = {
   rules: [
@@ -19,7 +23,9 @@ if (process.env.NODE_ENV !== 'production') {
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={createStore(reducers)}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
