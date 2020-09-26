@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
 
-const isPlayingReducer = (isPlaying = true, action) => {
-  if (action.type === 'PLAYING_TOGGLED') {
-    return !isPlaying;
+const isPlayingReducer = (state = true, action) => {
+  switch (action.type) {
+    case 'PLAYING_TOGGLED':
+      return !state;
+    default:
+      return state;
   }
-
-  return isPlaying;
 };
 
 export default combineReducers({
