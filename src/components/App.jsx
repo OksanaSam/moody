@@ -20,17 +20,8 @@ class App extends Component {
       boxList: initialState,
       quote: '',
       author: '',
-      isToggled: false,
-      // isPlaying: true,
     };
   }
-
-  handleToggle = () => {
-    this.setState({
-      ...this.state,
-      isToggled: !this.state.isToggled,
-    });
-  };
 
   getBoxes(toggledColor) {
     const photoBoxes = this.state.boxList.map((box, index) => (
@@ -52,7 +43,7 @@ class App extends Component {
         author={this.state.author}
         removeQuote={this.removeQuote}
         getQuote={this.getQuote}
-        newColor={this.state.isToggled ? 'ToggledClass' : 'NotToggledClass'}
+        newColor={this.props.isColorToggled ? 'ToggledClass' : 'NotToggledClass'}
       />
     );
     return [photoBoxes[0], quoteBox, ...photoBoxes.slice(1)];
@@ -134,15 +125,13 @@ class App extends Component {
   };
 
   render() {
-    const newColor = this.state.isToggled ? 'ToggledClass' : 'NotToggledClass';
+    const newColor = this.props.isColorToggled ? 'ToggledClass' : 'NotToggledClass';
     const boxes = this.getBoxes(newColor);
-
-    console.log('is playing', this.props.isPlaying);
     const isPlaying = this.props.isPlaying ? 'PLAYING' : 'PAUSED';
 
     return (
       <>
-        {this.state.isToggled ? (
+        {this.props.isColorToggled ? (
           <Sound
             url={soundfileBlue}
             playStatus={Sound.status[isPlaying]}
@@ -159,7 +148,7 @@ class App extends Component {
             onFinishedPlaying={this.handleSongFinishedPlaying}
           />
         )}
-        <Header handleToggle={this.handleToggle} newColor={newColor} />
+        <Header newColor={newColor} />
         <main role="main" className={`mainContainer ${newColor}`}>
           <div className="wrapper">
             <div className="mainGrid" id="mainGrid">
@@ -174,7 +163,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { isPlaying: state.isPlaying };
+  return { isPlaying: state.isPlaying, isColorToggled: state.isColorToggled };
 };
 
 export default connect(mapStateToProps, { togglePlaying })(App);
