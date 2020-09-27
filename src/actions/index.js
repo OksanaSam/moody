@@ -5,3 +5,10 @@ export const togglePlaying = () => {
     type: 'PLAYING_TOGGLED',
   };
 };
+
+export const toggleColor = () => {
+  // Return an action
+  return {
+    type: 'COLOR_TOGGLED',
+  };
+};

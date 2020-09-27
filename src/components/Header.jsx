@@ -2,6 +2,7 @@ import React from 'react';
 import { FaPlayCircle, FaPauseCircle } from 'react-icons/fa';
 import { connect } from 'react-redux';
 import { togglePlaying } from '../actions';
+import { toggleColor } from '../actions';
 
 function Header(props) {
   return (
@@ -29,7 +30,7 @@ function Header(props) {
                 name="switchColor"
                 type="checkbox"
                 defaultChecked
-                onChange={props.handleToggle}
+                onChange={props.toggleColor}
               />
 
               <span className="slider"></span>
@@ -44,8 +45,7 @@ function Header(props) {
 const mapStateToProps = (state) => {
   return {
     isPlaying: state.isPlaying,
-    otherState: state,
   };
 };
 
-export default connect(mapStateToProps, { togglePlaying })(Header);
+export default connect(mapStateToProps, { togglePlaying, toggleColor })(Header);

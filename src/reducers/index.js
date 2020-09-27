@@ -9,6 +9,16 @@ const isPlayingReducer = (state = true, action) => {
   }
 };
 
+const isColorToggledReducer = (state = false, action) => {
+  switch (action.type) {
+    case 'COLOR_TOGGLED':
+      return !state;
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   isPlaying: isPlayingReducer,
+  isColorToggled: isColorToggledReducer,
 });
