@@ -47,9 +47,9 @@ class IncompleteImage extends Component {
           </>
         )}
         {this.state.showAdd && (
-          <label htmlFor="addButton">
+          <label htmlFor={`addButton ${this.props.numBox}`}>
             <button
-              id="addButton"
+              id={`addButton ${this.props.numBox}`}
               className="addButton"
               onClick={this.toggleClass}
               aria-label="Make input field appear"

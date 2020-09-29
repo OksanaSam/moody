@@ -22,11 +22,9 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={createStore(reducers)}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={createStore(reducers)}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
 

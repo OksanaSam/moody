@@ -18,7 +18,11 @@ function Header(props) {
             </div>
           </div>
           <div className="rightNav">
-            <button className="pauseButton" onClick={props.togglePlaying}>
+            <button
+              className="pauseButton"
+              onClick={props.togglePlaying}
+              aria-label="Play or Pause Audio"
+            >
               {props.isPlaying ? <FaPauseCircle /> : <FaPlayCircle />}
             </button>
             <label className="switch">
