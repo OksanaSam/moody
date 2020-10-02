@@ -2,6 +2,8 @@ Moody
 
 A moodboard web application tailored to user preferences. Built on React using 2 APIs and react-sound
 
+![profile](https://github.com/OksanaSam/moody/blob/master/MoodyPixel.png)
+
 Live link: oksanasam.github.io/moody/
 
 Created with Create React App.
