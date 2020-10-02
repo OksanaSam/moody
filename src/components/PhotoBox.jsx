@@ -3,6 +3,7 @@ import CompleteImage from './CompleteImage';
 import IncompleteImage from './IncompleteImage';
 
 function PhotoBox(props) {
+  console.log(props.getImages);
   return (
     <div className="frame">
       <div className="innerFrame">

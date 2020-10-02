@@ -11,6 +11,8 @@ import soundfileBlue from '../sound/seamusic.mp3';
 import Sound from 'react-sound';
 import { connect } from 'react-redux';
 import { togglePlaying } from '../actions';
+import { fetchImages } from '../actions';
+import { bindActionCreators } from 'redux';
 
 class App extends Component {
   constructor() {
@@ -32,6 +34,7 @@ class App extends Component {
         altTag={box.alt}
         numBox={index}
         getImages={this.getImages}
+        getImages={this.props.fetchImages}
         removeImages={this.removeImages}
         newColor={toggledColor}
       />
@@ -50,6 +53,7 @@ class App extends Component {
   }
 
   // Getting images from Unsplash API
+
   key = process.env.REACT_APP_KEY;
   getImages = async (photoMood, numBox) => {
     try {
@@ -125,6 +129,9 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.props.fetchImages);
+    console.log(this.getImages);
+    // this.getImages;
     const newColor = this.props.isColorToggled ? 'ToggledClass' : 'NotToggledClass';
     const boxes = this.getBoxes(newColor);
     const isPlaying = this.props.isPlaying ? 'PLAYING' : 'PAUSED';
@@ -166,4 +173,16 @@ const mapStateToProps = (state) => {
   return { isPlaying: state.isPlaying, isColorToggled: state.isColorToggled };
 };
 
-export default connect(mapStateToProps, { togglePlaying })(App);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(
+    {
+      fetchImages: (boxId) => {
+        fetchImages(boxId);
+      },
+      togglePlaying,
+    },
+    dispatch
+  );
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
