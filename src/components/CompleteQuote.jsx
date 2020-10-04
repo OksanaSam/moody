@@ -1,26 +1,26 @@
 import React from 'react';
+//----------REDUX--------//
 import { removeQuote } from '../actions';
 import { connect } from 'react-redux';
 
 function CompleteQuote(props) {
-  const handleClick = () => {
-    props.removeQuote();
-  };
+  const { newColor, removeQuote } = props;
+  const { quote, author } = props.quoteState;
   return (
-    <div className={`imagePlace ${props.newColor}`}>
+    <div className={`imagePlace ${newColor}`}>
       <label htmlFor="closeButton" className="sr-only">
         Close the content
       </label>
       <button
         id="closeButton"
         className="closeButton"
-        onClick={handleClick}
+        onClick={removeQuote}
         aria-label="Close the content"
       >
         <i className="fas fa-times"></i>
       </button>
-      <p className="randomQuote">{props.quoteState.quote}</p>
-      <p className="quoteAuthor">{props.quoteState.author}</p>
+      <p className="randomQuote">{quote}</p>
+      <p className="quoteAuthor">{author}</p>
     </div>
   );
 }

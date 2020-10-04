@@ -1,12 +1,10 @@
 import React from 'react';
+//----------REDUX--------//
 import { connect } from 'react-redux';
 import { removeImage } from '../actions';
 
 function CompleteImage(props) {
-  const handleClick = () => {
-    props.removeImage(props.numBox);
-  };
-
+  const { url, altTag, removeImage, numBox } = props;
   return (
     <div className="imagePlace imageEmpty">
       <label htmlFor="closeButton" className="sr-only">
@@ -15,12 +13,12 @@ function CompleteImage(props) {
       <button
         id="closeButton"
         className="closeButton"
-        onClick={handleClick}
+        onClick={() => removeImage(numBox)}
         aria-label="Close the content"
       >
         <i className="fas fa-times"></i>
       </button>
-      <img src={props.url} alt={props.altTag} />
+      <img src={url} alt={altTag} />
     </div>
   );
 }

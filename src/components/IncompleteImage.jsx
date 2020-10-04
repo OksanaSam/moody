@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//----------REDUX--------//
 import { connect } from 'react-redux';
 import { fetchImages } from '../actions';
 
@@ -10,8 +11,6 @@ class IncompleteImage extends Component {
       showAdd: true,
       textInput: '',
     };
-
-    this.toggleClass = this.toggleClass.bind(this);
   }
 
   handleKeyPress = (e) => {
@@ -24,14 +23,16 @@ class IncompleteImage extends Component {
 
   toggleClass = () => {
     this.setState({
+      ...this.state,
       showInput: !this.state.showInput,
       showAdd: !this.state.showAdd,
     });
   };
 
   render() {
+    const { newColor, numBox } = this.props;
     return (
-      <div className={`imagePlace ${this.props.newColor}`}>
+      <div className={`imagePlace ${newColor}`}>
         {this.state.showInput && (
           <>
             <label for="moodInput" className="sr-only">
@@ -49,9 +50,9 @@ class IncompleteImage extends Component {
           </>
         )}
         {this.state.showAdd && (
-          <label htmlFor={`addButton ${this.props.numBox}`}>
+          <label htmlFor={`addButton ${numBox}`}>
             <button
-              id={`addButton ${this.props.numBox}`}
+              id={`addButton ${numBox}`}
               className="addButton"
               onClick={this.toggleClass}
               aria-label="Make input field appear"

@@ -1,23 +1,25 @@
 import React from 'react';
+//----------COMPONENTS--------//
 import CompleteImage from './CompleteImage';
 import IncompleteImage from './IncompleteImage';
+//----------REDUX--------//
 import { connect } from 'react-redux';
 
 function PhotoBox(props) {
-  const { mood } = props;
+  const { mood, numBox, url, altTag, newColor } = props;
   return (
     <div className="frame">
       <div className="innerFrame">
-        {props.mood || props.url ? (
+        {mood || url ? (
           <CompleteImage
-            mood={props.mood}
-            url={props.url}
-            altTag={props.altTag}
-            numBox={props.numBox}
-            newColor={props.newColor}
+            mood={mood}
+            url={url}
+            altTag={altTag}
+            numBox={numBox}
+            newColor={newColor}
           />
         ) : (
-          <IncompleteImage numBox={props.numBox} newColor={props.newColor} />
+          <IncompleteImage numBox={numBox} newColor={newColor} />
         )}
         <div className="icons">
           <div className="leftIcons">
