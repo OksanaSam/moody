@@ -1,29 +1,32 @@
 import React from 'react';
+//----------ICONS--------//
 import { FaPlayCircle, FaPauseCircle } from 'react-icons/fa';
+//----------REDUX--------//
 import { connect } from 'react-redux';
 import { togglePlaying } from '../actions';
 import { toggleColor } from '../actions';
 
 function Header(props) {
+  const { newColor, togglePlaying, toggleColor, isPlaying } = props;
   return (
-    <header className={`header ${props.newColor}`} id="header" role="banner">
+    <header className={`header ${newColor}`} id="header" role="banner">
       <div className="wrapper">
         <nav className="navBar">
           <div className="logo">
             <h1>MOODY</h1>
             <div className="palette">
-              <div className={`colorOne ${props.newColor}`}></div>
-              <div className={`colorTwo ${props.newColor}`}></div>
-              <div className={`colorThree ${props.newColor}`}></div>
+              <div className={`colorOne ${newColor}`}></div>
+              <div className={`colorTwo ${newColor}`}></div>
+              <div className={`colorThree ${newColor}`}></div>
             </div>
           </div>
           <div className="rightNav">
             <button
               className="pauseButton"
-              onClick={props.togglePlaying}
+              onClick={togglePlaying}
               aria-label="Play or Pause Audio"
             >
-              {props.isPlaying ? <FaPauseCircle /> : <FaPlayCircle />}
+              {isPlaying ? <FaPauseCircle /> : <FaPlayCircle />}
             </button>
             <label className="switch">
               <label htmlFor="switchColor" className="sr-only">
@@ -34,7 +37,7 @@ function Header(props) {
                 name="switchColor"
                 type="checkbox"
                 defaultChecked
-                onChange={props.toggleColor}
+                onChange={toggleColor}
               />
 
               <span className="slider"></span>

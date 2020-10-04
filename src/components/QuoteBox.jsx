@@ -1,16 +1,20 @@
 import React from 'react';
+//----------COMPONENTS--------//
 import CompleteQuote from './CompleteQuote';
 import IncompleteQuote from './IncompleteQuote';
+//----------REDUX--------//
 import { connect } from 'react-redux';
 
 function QuoteBox(props) {
+  const { newColor } = props;
+
   return (
     <div className="frame">
       <div className="innerFrame">
         {props.quoteState.quote ? (
-          <CompleteQuote newColor={props.newColor} />
+          <CompleteQuote newColor={newColor} />
         ) : (
-          <IncompleteQuote newColor={props.newColor} />
+          <IncompleteQuote newColor={newColor} />
         )}
         <div className="icons">
           <div className="leftIcons">

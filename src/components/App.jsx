@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+//----------COMPONENTS--------//
 import Header from './Header';
 import PhotoBox from './PhotoBox';
 import QuoteBox from './QuoteBox';
 import Footer from './Footer';
+//----------STYLES--------//
 import '../styles/App.css';
+//----------LOCAL FILES--------//
 import soundfilePink from '../sound/Erik Satie_20170606_128.mp3';
 import soundfileBlue from '../sound/seamusic.mp3';
+//----------LIBRARIES--------//
 import Sound from 'react-sound';
+//----------REDUX--------//
 import { connect } from 'react-redux';
 import { togglePlaying } from '../actions';
 
@@ -32,16 +37,17 @@ class App extends Component {
   }
 
   render() {
-    const newColor = this.props.isColorToggled ? 'ToggledClass' : 'NotToggledClass';
+    const { isColorToggled, isPlaying } = this.props;
+    const newColor = isColorToggled ? 'ToggledClass' : 'NotToggledClass';
     const boxes = this.getBoxes(newColor);
-    const isPlaying = this.props.isPlaying ? 'PLAYING' : 'PAUSED';
+    const isSoundPlaying = isPlaying ? 'PLAYING' : 'PAUSED';
 
     return (
       <>
-        {this.props.isColorToggled ? (
+        {isColorToggled ? (
           <Sound
             url={soundfileBlue}
-            playStatus={Sound.status[isPlaying]}
+            playStatus={Sound.status[isSoundPlaying]}
             onLoading={this.handleSongLoading}
             onPlaying={this.handleSongPlaying}
             onFinishedPlaying={this.handleSongFinishedPlaying}
@@ -49,7 +55,7 @@ class App extends Component {
         ) : (
           <Sound
             url={soundfilePink}
-            playStatus={Sound.status[isPlaying]}
+            playStatus={Sound.status[isSoundPlaying]}
             onLoading={this.handleSongLoading}
             onPlaying={this.handleSongPlaying}
             onFinishedPlaying={this.handleSongFinishedPlaying}

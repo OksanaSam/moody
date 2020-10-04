@@ -1,37 +1,50 @@
 import { combineReducers } from 'redux';
-import initialState from '../initialState';
+import initialBoxState from './initialBoxState';
+//----------ACTION TYPES--------//
+import {
+  PLAYING_TOGGLED,
+  COLOR_TOGGLED,
+  FETCH_IMAGE,
+  REMOVE_IMAGE,
+  FETCH_QUOTE,
+  REMOVE_QUOTE,
+} from '../actions/types';
 
-const isPlayingReducer = (state = true, action) => {
+//----------PLAY SOUND REDUCER--------//
+const playSoundReducer = (state = true, action) => {
   switch (action.type) {
-    case 'PLAYING_TOGGLED':
+    case PLAYING_TOGGLED:
       return !state;
     default:
       return state;
   }
 };
 
-const isColorToggledReducer = (state = false, action) => {
+//----------TOGGLE COLOR REDUCER--------//
+const toggleColorReducer = (state = false, action) => {
   switch (action.type) {
-    case 'COLOR_TOGGLED':
+    case COLOR_TOGGLED:
       return !state;
     default:
       return state;
   }
 };
 
-const boxListReducer = (state = initialState, action) => {
+//----------BOX LIST REDUCER--------//
+const boxListReducer = (state = initialBoxState, action) => {
   switch (action.type) {
-    case 'FETCH_IMAGES':
-      const url = action.payload.data.urls.regular;
-      const altTag = action.payload.data.alt_description;
+    case FETCH_IMAGE:
+      const { data, mood, id } = action.payload;
+      const url = data.urls.regular;
+      const altTag = data.alt_description;
       const copy = [...state];
-      copy[action.payload.id] = {
+      copy[id] = {
         url: url,
-        mood: action.payload.mood,
+        mood,
         alt: altTag,
       };
       return copy;
-    case 'REMOVE_IMAGE':
+    case REMOVE_IMAGE:
       const removeCopy = [...state];
       removeCopy[action.payload.id] = {
         url: '',
@@ -44,22 +57,24 @@ const boxListReducer = (state = initialState, action) => {
   }
 };
 
+//----------QUOTE REDUCER--------//
 const initialQuote = { quote: '', author: '' };
 
 const quoteReducer = (state = initialQuote, action) => {
   switch (action.type) {
-    case 'FETCH_QUOTE':
+    case FETCH_QUOTE:
       return action.payload;
-    case 'REMOVE_QUOTE':
+    case REMOVE_QUOTE:
       return initialQuote;
     default:
       return state;
   }
 };
 
+//----------COMBINING REDUCERS--------//
 export default combineReducers({
-  isPlaying: isPlayingReducer,
-  isColorToggled: isColorToggledReducer,
+  isPlaying: playSoundReducer,
+  isColorToggled: toggleColorReducer,
   boxList: boxListReducer,
   quoteState: quoteReducer,
 });

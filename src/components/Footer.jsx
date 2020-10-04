@@ -1,4 +1,5 @@
 import React from 'react';
+//----------LOCAL FILES--------//
 import logo from '../assets/logo.png';
 
 function Footer(props) {

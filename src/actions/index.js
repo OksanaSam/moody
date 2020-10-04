@@ -1,17 +1,25 @@
 import axios from 'axios';
+//----------ACTION TYPES--------//
+import {
+  PLAYING_TOGGLED,
+  COLOR_TOGGLED,
+  FETCH_IMAGE,
+  IMAGE_ERROR,
+  REMOVE_IMAGE,
+  FETCH_QUOTE,
+  QUOTE_ERROR,
+  REMOVE_QUOTE,
+} from './types';
 
-// Action creator
 export const togglePlaying = () => {
-  // Return an action
   return {
-    type: 'PLAYING_TOGGLED',
+    type: PLAYING_TOGGLED,
   };
 };
 
 export const toggleColor = () => {
-  // Return an action
   return {
-    type: 'COLOR_TOGGLED',
+    type: COLOR_TOGGLED,
   };
 };
 
@@ -27,7 +35,7 @@ export const fetchImages = (photoMood, id) => async (dispatch) => {
       },
     });
     dispatch({
-      type: 'FETCH_IMAGES',
+      type: FETCH_IMAGE,
       payload: {
         data: response.data,
         mood: photoMood,
@@ -36,16 +44,15 @@ export const fetchImages = (photoMood, id) => async (dispatch) => {
     });
   } catch (e) {
     dispatch({
-      type: 'IMAGE_ERROR',
+      type: IMAGE_ERROR,
       payload: console.log(e),
     });
   }
 };
 
 export const removeImage = (id) => {
-  // Return an action
   return {
-    type: 'REMOVE_IMAGE',
+    type: REMOVE_IMAGE,
     payload: {
       id,
     },
@@ -63,7 +70,7 @@ export const fetchQuote = () => async (dispatch) => {
     const randomQuote = filteredData[quoteId].text;
     const author = filteredData[quoteId].author;
     dispatch({
-      type: 'FETCH_QUOTE',
+      type: FETCH_QUOTE,
       payload: {
         quote: randomQuote,
         author: author,
@@ -71,15 +78,14 @@ export const fetchQuote = () => async (dispatch) => {
     });
   } catch (e) {
     dispatch({
-      type: 'QUOTE_ERROR',
+      type: QUOTE_ERROR,
       payload: console.log(e),
     });
   }
 };
 
 export const removeQuote = () => {
-  // Return an action
   return {
-    type: 'REMOVE_QUOTE',
+    type: REMOVE_QUOTE,
   };
 };
