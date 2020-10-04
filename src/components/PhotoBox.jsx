@@ -1,9 +1,10 @@
 import React from 'react';
 import CompleteImage from './CompleteImage';
 import IncompleteImage from './IncompleteImage';
+import { connect } from 'react-redux';
 
 function PhotoBox(props) {
-  console.log(props.getImages);
+  const { mood } = props;
   return (
     <div className="frame">
       <div className="innerFrame">
@@ -13,15 +14,10 @@ function PhotoBox(props) {
             url={props.url}
             altTag={props.altTag}
             numBox={props.numBox}
-            removeImages={props.removeImages}
             newColor={props.newColor}
           />
         ) : (
-          <IncompleteImage
-            getImages={props.getImages}
-            numBox={props.numBox}
-            newColor={props.newColor}
-          />
+          <IncompleteImage numBox={props.numBox} newColor={props.newColor} />
         )}
         <div className="icons">
           <div className="leftIcons">
@@ -31,10 +27,16 @@ function PhotoBox(props) {
           </div>
           <i className="far fa-bookmark"></i>
         </div>
-        {props.mood && <p className="moodTitle">{props.mood}</p>}
+        {mood && <p className="moodTitle">{mood}</p>}
       </div>
     </div>
   );
 }
 
-export default PhotoBox;
+const mapStateToProps = (state) => {
+  return {
+    boxList: state.boxList,
+  };
+};
+
+export default connect(mapStateToProps, null)(PhotoBox);
