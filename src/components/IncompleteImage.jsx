@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchImages } from '../actions';
 
 class IncompleteImage extends Component {
   constructor() {
@@ -15,7 +17,7 @@ class IncompleteImage extends Component {
   handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       if (!this.state.textInput) return;
-      this.props.getImages(this.state.textInput, this.props.numBox);
+      this.props.fetchImages(this.state.textInput, this.props.numBox);
       this.setState({ textInput: '' });
     }
   };
@@ -63,4 +65,10 @@ class IncompleteImage extends Component {
   }
 }
 
-export default IncompleteImage;
+const mapStateToProps = (state) => {
+  return {
+    boxList: state.boxList,
+  };
+};
+
+export default connect(mapStateToProps, { fetchImages })(IncompleteImage);

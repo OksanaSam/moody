@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { removeImage } from '../actions';
 
 function CompleteImage(props) {
   const handleClick = () => {
-    props.removeImages(props.numBox);
+    props.removeImage(props.numBox);
   };
 
   return (
@@ -23,4 +25,10 @@ function CompleteImage(props) {
   );
 }
 
-export default CompleteImage;
+const mapStateToProps = (state) => {
+  return {
+    boxList: state.boxList,
+  };
+};
+
+export default connect(mapStateToProps, { removeImage })(CompleteImage);

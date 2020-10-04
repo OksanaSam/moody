@@ -1,20 +1,16 @@
 import React from 'react';
 import CompleteQuote from './CompleteQuote';
 import IncompleteQuote from './IncompleteQuote';
+import { connect } from 'react-redux';
 
 function QuoteBox(props) {
   return (
     <div className="frame">
       <div className="innerFrame">
-        {props.quote ? (
-          <CompleteQuote
-            quote={props.quote}
-            author={props.author}
-            removeQuote={props.removeQuote}
-            newColor={props.newColor}
-          />
+        {props.quoteState.quote ? (
+          <CompleteQuote newColor={props.newColor} />
         ) : (
-          <IncompleteQuote getQuote={props.getQuote} newColor={props.newColor} />
+          <IncompleteQuote newColor={props.newColor} />
         )}
         <div className="icons">
           <div className="leftIcons">
@@ -29,4 +25,10 @@ function QuoteBox(props) {
   );
 }
 
-export default QuoteBox;
+const mapStateToProps = (state) => {
+  return {
+    quoteState: state.quoteState,
+  };
+};
+
+export default connect(mapStateToProps, null)(QuoteBox);

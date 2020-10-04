@@ -1,4 +1,6 @@
 import React from 'react';
+import { removeQuote } from '../actions';
+import { connect } from 'react-redux';
 
 function CompleteQuote(props) {
   const handleClick = () => {
@@ -17,10 +19,16 @@ function CompleteQuote(props) {
       >
         <i className="fas fa-times"></i>
       </button>
-      <p className="randomQuote">{props.quote}</p>
-      <p className="quoteAuthor">{props.author}</p>
+      <p className="randomQuote">{props.quoteState.quote}</p>
+      <p className="quoteAuthor">{props.quoteState.author}</p>
     </div>
   );
 }
 
-export default CompleteQuote;
+const mapStateToProps = (state) => {
+  return {
+    quoteState: state.quoteState,
+  };
+};
+
+export default connect(mapStateToProps, { removeQuote })(CompleteQuote);

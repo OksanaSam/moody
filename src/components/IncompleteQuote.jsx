@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { fetchQuote } from '../actions';
+import { connect } from 'react-redux';
 
 class IncompleteQuote extends Component {
   constructor() {
@@ -10,7 +12,7 @@ class IncompleteQuote extends Component {
   }
 
   toggleClass = () => {
-    this.props.getQuote();
+    this.props.fetchQuote();
     this.setState({
       showAdd: !this.state.showAdd,
     });
@@ -36,4 +38,10 @@ class IncompleteQuote extends Component {
   }
 }
 
-export default IncompleteQuote;
+const mapStateToProps = (state) => {
+  return {
+    quoteState: state.quoteState,
+  };
+};
+
+export default connect(mapStateToProps, { fetchQuote })(IncompleteQuote);
