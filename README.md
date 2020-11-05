@@ -8,7 +8,7 @@ A moodboard web application tailored to user preferences. Built on React using 2
 
 ![profile](https://github.com/OksanaSam/moody/blob/master/MoodyPixel.png)
 
- Check it out <a href="https://oksanasam.github.io/moody/ ">here</a>
+Live link <a href="https://oksanasam.github.io/moody/ ">here</a>
 
 Created with Create React App.
 
