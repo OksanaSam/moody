@@ -1,0 +1,154 @@
+/* Main Photo Grid Styles */
+.mainContainer {
+  height: fit-content;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Toggling Colors */
+.mainContainer.NotToggledClass {
+  background-color: #f0e7de;
+}
+
+.mainContainer.ToggledClass {
+  background-color: #e4e5e7;
+}
+
+.mainGrid {
+  width: 100%;
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+/* Photo Box Styles */
+.frame {
+  padding-top: 20px;
+  display: flex;
+  height: 320px;
+  min-height: fit-content;
+  width: 50%;
+  max-width: 300px;
+  min-width: 200px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11), 0 16px 16px rgba(0, 0, 0, 0.11),
+    0 32px 32px rgba(0, 0, 0, 0.11);
+}
+
+.innerFrame {
+  width: 90%;
+  height: 100%;
+  min-height: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.imagePlace {
+  height: 80%;
+  min-height: fit-content;
+  background-color: #f7caca;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.imagePlace.imageEmpty {
+  background-color: #ffffff;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Toggling Colors */
+.imagePlace.NotToggledClass {
+  background-color: #f7caca;
+}
+
+.imagePlace.ToggledClass {
+  background-color: #89a7bf;
+}
+
+.imagePlace img {
+  align-self: flex-start;
+}
+
+.frame:hover,
+.frame:focus {
+  transform: scale(1, 1) rotate(0deg);
+  transition: all 0.4s;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px 5px 0;
+}
+
+.leftIcons {
+  display: flex;
+}
+
+.leftIcons i {
+  padding-right: 10px;
+}
+
+/* INPUT STYLES */
+.moodInput {
+  border-radius: 3px;
+  width: 80%;
+  border: 2px solid black;
+  padding: 7px;
+}
+
+.moodInput::placeholder {
+  font-family: 'Cutive Mono', monospace;
+  font-size: 1.8rem;
+}
+
+/* HELPER BUTTON STYLES */
+.closeButton,
+.addButton {
+  transition: all 0.2s ease-in-out;
+  color: #ffffff;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.closeButton:hover,
+.closeButton:focus,
+.addButton:hover,
+.addButton:focus {
+  transform: scale(1.3);
+}
+
+.closeButton:hover,
+.closeButton:focus {
+  color: #000;
+}
+
+.addButton {
+  font-size: 5rem;
+  align-self: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 2rem;
+}
+
+.randomQuote,
+.quoteAuthor {
+  padding: 10px;
+  font-size: 2rem;
+}

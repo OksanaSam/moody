@@ -1,7 +1,7 @@
 import React from 'react';
 //----------COMPONENTS--------//
-import CompleteQuote from './CompleteQuote';
-import IncompleteQuote from './IncompleteQuote';
+import CompleteQuote from '../completeQuote';
+import IncompleteQuote from '../incompleteQuote';
 //----------REDUX--------//
 import { connect } from 'react-redux';
 

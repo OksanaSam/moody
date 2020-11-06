@@ -1,6 +1,6 @@
 import React from 'react';
 //----------REDUX--------//
-import { removeQuote } from '../actions';
+import { removeQuote } from '../../actions';
 import { connect } from 'react-redux';
 
 function CompleteQuote(props) {

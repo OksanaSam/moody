@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //----------REDUX--------//
-import { fetchQuote } from '../actions';
+import { fetchQuote } from '../../actions';
 import { connect } from 'react-redux';
 
 class IncompleteQuote extends Component {
