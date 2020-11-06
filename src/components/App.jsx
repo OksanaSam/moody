@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 //----------COMPONENTS--------//
-import Header from './Header';
-import PhotoBox from './PhotoBox';
-import QuoteBox from './QuoteBox';
-import Footer from './Footer';
+import Header from './header';
+import PhotoBox from './photoBox';
+import QuoteBox from './quoteBox';
+import Footer from './footer';
+
 //----------STYLES--------//
-import '../styles/App.css';
+import '../styles/App.scss';
+
 //----------LOCAL FILES--------//
 import soundfilePink from '../sound/Erik Satie_20170606_128.mp3';
 import soundfileBlue from '../sound/seamusic.mp3';

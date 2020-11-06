@@ -1,0 +1,45 @@
+/* FOOTER STARTS */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  text-align: center;
+}
+
+.footerLogo {
+  max-width: 50px;
+}
+
+.footer.NotToggledClass {
+  background-color: #d0b8b3;
+}
+
+.footer.ToggledClass {
+  background-color: #c6d3dc;
+}
+
+.footerFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.socialIcons i {
+  color: white;
+  padding: 10px;
+  font-size: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.socialIcons i:hover,
+.socialIcons i:focus {
+  transform: scale(1.5);
+}
+
+/* FOOTER ENDS */

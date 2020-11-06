@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //----------REDUX--------//
 import { connect } from 'react-redux';
-import { fetchImages } from '../actions';
+import { fetchImages } from '../../actions';
 
 class IncompleteImage extends Component {
   constructor() {

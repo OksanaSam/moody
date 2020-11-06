@@ -1,7 +1,7 @@
 import React from 'react';
 //----------REDUX--------//
 import { connect } from 'react-redux';
-import { removeImage } from '../actions';
+import { removeImage } from '../../actions';
 
 function CompleteImage(props) {
   const { url, altTag, removeImage, numBox } = props;

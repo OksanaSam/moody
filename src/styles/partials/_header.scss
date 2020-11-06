@@ -1,0 +1,158 @@
+/* HEADER STYLES */
+.header {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Toggling Colors */
+.header.NotToggledClass {
+  background-color: #d0b8b3;
+}
+
+.header.ToggledClass {
+  background-color: #c6d3dc;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-family: 'Fredericka the Great', cursive;
+  font-weight: 500;
+  font-size: 4rem;
+}
+
+/* Color Palette */
+.palette {
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
+  height: 20px;
+  background-color: #ffffff;
+  margin-left: 20px;
+  padding: 3px 3px 3px 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11), 0 16px 16px rgba(0, 0, 0, 0.11),
+    0 32px 32px rgba(0, 0, 0, 0.11);
+}
+
+.colorOne,
+.colorTwo,
+.colorThree {
+  background-color: #f0e7de;
+  width: 30%;
+}
+
+.colorOne.NotToggledClass {
+  background-color: #f0e7de;
+}
+
+.colorTwo.NotToggledClass {
+  background-color: #f7caca;
+}
+
+.colorThree.NotToggledClass {
+  background-color: #d0b8b3;
+}
+
+/* Toggling Colors of Color Palette */
+.colorOne.ToggledClass {
+  background-color: #e4e5e7;
+}
+
+.colorTwo.ToggledClass {
+  background-color: #89a7bf;
+}
+
+.colorThree.ToggledClass {
+  background-color: #c6d3dc;
+}
+
+/* nav styles */
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rightNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pause Button Styles */
+.pauseButton {
+  color: white;
+  font-size: 25px;
+  outline: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  margin-top: 5px;
+  /* padding: 0; */
+}
+
+.pauseButton:hover,
+.pauseButton:focus {
+  cursor: pointer;
+  filter: drop-shadow(8px 8px 10px gray);
+}
+
+/* Color Toggle Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #89a7bf;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #f7caca;
+}
+
+input:focus + .slider,
+input:hover + .slider {
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 15px 20px -10px rgba(0, 0, 0, 0.5);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}

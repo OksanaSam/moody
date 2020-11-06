@@ -1,7 +1,7 @@
 import React from 'react';
 //----------COMPONENTS--------//
-import CompleteImage from './CompleteImage';
-import IncompleteImage from './IncompleteImage';
+import CompleteImage from '../completeImage';
+import IncompleteImage from '../incompleteImage';
 //----------REDUX--------//
 import { connect } from 'react-redux';
 

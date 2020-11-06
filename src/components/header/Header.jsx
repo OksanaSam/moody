@@ -3,8 +3,8 @@ import React from 'react';
 import { FaPlayCircle, FaPauseCircle } from 'react-icons/fa';
 //----------REDUX--------//
 import { connect } from 'react-redux';
-import { togglePlaying } from '../actions';
-import { toggleColor } from '../actions';
+import { togglePlaying } from '../../actions';
+import { toggleColor } from '../../actions';
 
 function Header(props) {
   const { newColor, togglePlaying, toggleColor, isPlaying } = props;
