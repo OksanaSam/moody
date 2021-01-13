@@ -1,6 +1,7 @@
 Moody
 
-Disclaimer 1: The app is built using class-based components without hooks. As I'm a big fan of hooks and functional components and use them in all my other apps, I reserved the right to have one app with good old classes.
+Disclaimer 1: The app is built using class-based components without hooks. As I'm a big fan of hooks and functional components and use them in all my other apps, I reserved the right to have one app with good old
+classes.
 
 
 
